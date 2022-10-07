@@ -8,5 +8,5 @@
 
 ---
 ###### This application was developed by Computer Science students at Universidade Federal de Juiz de Fora
-###### Bruno Rocha Pedrosa, Eduardo Oliveira Almeida, Maria Cecília Romão Santos, Maycon Silva
+###### Bruno Rocha Pedrosa, Eduardo Oliveira Almeida, Maria Cecília Romão Santos, Maycon Douglas Silva
 ###### tags: `Java` `Object-orientation` `UFJF`

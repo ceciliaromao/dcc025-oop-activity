@@ -3,12 +3,14 @@
 # Practical Work of DCC025 - Object-oriented programming - Semester 2022-3
 ## Professor Gleiph Ghiotto
 
+## 🩺 Doctor Appointment Schedule
+
 ## 🚀 Quick start
 
 1.  **Pre-requisites**
 
-    - **JDK 17+**: https://www.oracle.com/br/java/technologies/downloads/#java17
-    - **Maven**: https://maven.apache.org/download.cgi
+    - **JDK 17**: https://www.oracle.com/br/java/technologies/downloads/#java17
+    - **Maven 3.8.x**: https://maven.apache.org/download.cgi
 
 
 1.  **Clone and move into the repository**
@@ -38,8 +40,6 @@ Two interfaces were also created: `Calendar` and `Users`.
 `Employees`: It's a subclass of `Person` and a superclass of `Admin` and `Doctor`. It has a new attribute `section` and a new method of defining schedules, creating a vacancy in the agenda, which can be scheduled by a patient;
 `Doctor`: It's a subclass of `Employees`, with the new attribute `crm` and `specialty`, in addition to the polymorphic methods to define their scale and consult their schedule;
 `Admin`: It's a subclass of `Employees` and has a new attribute `registration`, and new methods to register a user, consult data on active users, edit and delete users, in addition to defining a general scale - inherited from `Service` class -, performing appointments or consulting a general agenda - inherited from `Person` class -, and remove a scheduled appointment.
-
-
 
 ## 👨‍💻 Conventions
 
@@ -92,5 +92,5 @@ Two interfaces were also created: `Calendar` and `Users`.
 
 ---
 ###### This application was developed by Computer Science students at Universidade Federal de Juiz de Fora
-###### Bruno Rocha Pedrosa, Eduardo Oliveira Almeida, Maria Cecília Romão Santos, Maycon Douglas Silva Cardoso
+###### Developed by: Bruno Rocha Pedrosa, Eduardo Oliveira Almeida, Maria Cecília Romão Santos, Maycon Douglas Silva Cardoso
 ###### tags: `Java` `Object Oriented Programming` `Swing` `UFJF`

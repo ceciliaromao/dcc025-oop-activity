@@ -5,6 +5,8 @@
 
 package com.mycompany.agendamentoconsultas;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mariacecilia
@@ -12,6 +14,23 @@ package com.mycompany.agendamentoconsultas;
 public class AgendamentoConsultas {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        String name;
+        String birthdate;
+        String gender;
+        
+        Scanner key = new Scanner(System.in);
+        
+        System.out.println("Informe o nome do usuário: ");
+        name = key.nextLine();
+        
+        System.out.println("Informe a data de nascimento (dd/mm/aaaa):");
+        birthdate = key.nextLine();
+        
+        System.out.println("Informe o gênero (F/M):");
+        gender = key.nextLine();
+        
+        Person p = new Person(name, birthdate, gender);
+        
+        System.out.println("Usuário " + p.getName() + " criado com sucesso!");
     }
 }

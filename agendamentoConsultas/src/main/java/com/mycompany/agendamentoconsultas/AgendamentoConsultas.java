@@ -5,6 +5,8 @@
 
 package com.mycompany.agendamentoconsultas;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -15,7 +17,7 @@ public class AgendamentoConsultas {
 
     public static void main(String[] args) {
         String name;
-        String birthdate;
+        String birthStr;
         String gender;
         
         Scanner key = new Scanner(System.in);
@@ -24,13 +26,17 @@ public class AgendamentoConsultas {
         name = key.nextLine();
         
         System.out.println("Informe a data de nascimento (dd/mm/aaaa):");
-        birthdate = key.nextLine();
+        birthStr = key.nextLine();
         
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyy");
+        Date birthdate = simpleDateFormat.parse(birthStr);
+                
         System.out.println("Informe o gênero (F/M):");
         gender = key.nextLine();
         
         Person p = new Person(name, birthdate, gender);
         
         System.out.println("Usuário " + p.getName() + " criado com sucesso!");
+        System.out.println(p.getBirthdate());
     }
 }

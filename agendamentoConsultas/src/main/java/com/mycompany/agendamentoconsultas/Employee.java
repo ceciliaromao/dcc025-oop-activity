@@ -4,6 +4,8 @@
  */
 package com.mycompany.agendamentoconsultas;
 
+import java.util.Date;
+
 /**
  *
  * @author brunopedrosa
@@ -12,12 +14,16 @@ package com.mycompany.agendamentoconsultas;
  * @author maycondouglas
  * 
  */
-public class Employees extends Person {
+public class Employee extends Person {
     //FIELDS
     //herda da classe Person
     String section;
     
     //METHODS
     //define escala (CREATE Agenda)
+
+    public Employee(String name, Date birthdate, String gender) {
+        super(name, birthdate, gender);
+    }
     
 }

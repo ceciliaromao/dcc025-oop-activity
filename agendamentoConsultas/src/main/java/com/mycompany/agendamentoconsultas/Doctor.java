@@ -4,6 +4,8 @@
  */
 package com.mycompany.agendamentoconsultas;
 
+import java.util.Date;
+
 /**
  *
  * @author brunopedrosa
@@ -12,7 +14,7 @@ package com.mycompany.agendamentoconsultas;
  * @author maycondouglas
  * 
  */
-public class Doctor extends Employees{
+public class Doctor extends Employee{
     //FIELDS
     //herda da classe Service
     String crm;
@@ -22,4 +24,8 @@ public class Doctor extends Employees{
     //consultar agenda (READ Agenda - search by doctor - polimorfismo de método de Person)
     
     //definir escala - apenas na própria agenda (CREATE Agenda - polimorfismo de método de Service)
+
+    public Doctor(String name, Date birthdate, String gender) {
+        super(name, birthdate, gender);
+    }
 }

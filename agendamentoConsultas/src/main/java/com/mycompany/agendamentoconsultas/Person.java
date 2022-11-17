@@ -4,6 +4,8 @@
  */
 package com.mycompany.agendamentoconsultas;
 
+import java.util.Date;
+
 /**
  *
  * @author brunopedrosa
@@ -16,7 +18,7 @@ public class Person {
 
     //FIELDS
     private String name;
-    private String birthdate;
+    private Date birthdate;
     private String address;
     private String gender;
     private String phoneNumber;
@@ -29,7 +31,7 @@ public class Person {
     //consultar agenda (READ Agenda)
     
     //Construtor
-    public Person(String name, String birthdate, String gender) {
+    public Person(String name, Date birthdate, String gender) {
         this.name = name;
         this.birthdate = birthdate;
         this.gender = gender;
@@ -40,7 +42,7 @@ public class Person {
         return name;
     }
     
-    public String getBirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
@@ -65,7 +67,7 @@ public class Person {
         this.name = name;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 

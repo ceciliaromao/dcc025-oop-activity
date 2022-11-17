@@ -4,6 +4,8 @@
  */
 package com.mycompany.agendamentoconsultas;
 
+import java.util.Date;
+
 /**
  *
  * @author brunopedrosa
@@ -22,4 +24,8 @@ public class Pacient extends Person {
     //agendar - somente para si (UPDATE Agenda - polimorfismo de método de Person)
     
     //ver consultas agendadas (READ Agenda - search by pacient - polimorfismo de método de Person)
+
+    public Pacient(String name, Date birthdate, String gender) {
+        super(name, birthdate, gender);
+    }
 }

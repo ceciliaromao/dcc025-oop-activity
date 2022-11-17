@@ -4,6 +4,8 @@
  */
 package com.mycompany.agendamentoconsultas;
 
+import java.util.Date;
+
 /**
  *
  * @author brunopedrosa
@@ -12,7 +14,7 @@ package com.mycompany.agendamentoconsultas;
  * @author maycondouglas
  * 
  */
-public class Admin extends Employees{
+public class Admin extends Employee{
     //FIELDS
     //herda da classe Service
     String registration;
@@ -34,5 +36,9 @@ public class Admin extends Employees{
     //consulta agenda geral (READ Agenda - herda de Person)
     
     //desmarca consulta (DELETE Agenda) 
+
+    public Admin(String name, Date birthdate, String gender) {
+        super(name, birthdate, gender);
+    }
     
 }

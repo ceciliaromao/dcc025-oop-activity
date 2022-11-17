@@ -5,6 +5,7 @@
 
 package com.mycompany.agendamentoconsultas;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ import java.util.Scanner;
  */
 public class AgendamentoConsultas {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         String name;
         String birthStr;
         String gender;
@@ -28,7 +29,7 @@ public class AgendamentoConsultas {
         System.out.println("Informe a data de nascimento (dd/mm/aaaa):");
         birthStr = key.nextLine();
         
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date birthdate = simpleDateFormat.parse(birthStr);
                 
         System.out.println("Informe o gênero (F/M):");

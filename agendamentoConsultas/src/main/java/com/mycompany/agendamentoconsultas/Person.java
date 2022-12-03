@@ -14,7 +14,7 @@ import java.util.Date;
  * @author maycondouglas
  *
  */
-public class Person {
+public abstract class Person {
 
     //FIELDS
     private String name;
@@ -25,70 +25,88 @@ public class Person {
     private String email;
     private String password;
        
-    //METHODS
-    //realiza agendamento (UPDATE Agenda)
-
-    //consultar agenda (READ Agenda)
-    
-    //Construtor
     public Person(String name, Date birthdate, String gender) {
         this.name = name;
         this.birthdate = birthdate;
         this.gender = gender;
     }
     
-    //getters
+    public Person(String name, Date birthdate, String address, String gender, String phoneNumber, String email, String password) {
+        this.name = name;
+        this.birthdate = birthdate;
+        this.address = address;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.password = password;
+    }
+
     public String getName() {
         return name;
     }
-    
-    public Date getBirthdate() {
-        return birthdate;
-    }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-    
-    //setters
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
     }
 
     public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public String getAddress() {
+        return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getGender() {
+        return gender;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    
+    //METHODS
+    //realiza agendamento (UPDATE Agenda)
+
+    //consultar agenda (READ Agenda)
+    
+    
+    
+    
+    
+
     
 }

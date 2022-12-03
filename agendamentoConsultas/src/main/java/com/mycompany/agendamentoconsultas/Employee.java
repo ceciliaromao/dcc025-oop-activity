@@ -14,16 +14,34 @@ import java.util.Date;
  * @author maycondouglas
  * 
  */
-public class Employee extends Person {
+public abstract class Employee extends Person {
     //FIELDS
-    //herda da classe Person
-    String section;
+    private Person person;
+    private String section;
+    
+    public Employee(Person person, String section, String name, Date birthdate, String address, String gender, String phoneNumber, String email, String password) {
+        super(name, birthdate, address, gender, phoneNumber, email, password);
+        this.person = person;
+        this.section = section;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public String getSection() {
+        return section;
+    }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
     
     //METHODS
     //define escala (CREATE Agenda)
-
-    public Employee(String name, Date birthdate, String gender) {
-        super(name, birthdate, gender);
-    }
     
 }

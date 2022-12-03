@@ -16,8 +16,32 @@ import java.util.Date;
  */
 public class Admin extends Employee{
     //FIELDS
-    //herda da classe Service
-    String registration;
+    private Employee employee;
+    private String registration;
+    
+
+    public Admin(Employee employee, String registration, Person person, String section, String name, Date birthdate, String address, String gender, String phoneNumber, String email, String password) {
+        super(person, section, name, birthdate, address, gender, phoneNumber, email, password);
+        this.employee = employee;
+        this.registration = registration;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public String getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
+    
     
     //METHODS
     //registrar usuários (CREATE Users)
@@ -36,9 +60,4 @@ public class Admin extends Employee{
     //consulta agenda geral (READ Agenda - herda de Person)
     
     //desmarca consulta (DELETE Agenda) 
-
-    public Admin(String name, Date birthdate, String gender) {
-        super(name, birthdate, gender);
-    }
-    
 }

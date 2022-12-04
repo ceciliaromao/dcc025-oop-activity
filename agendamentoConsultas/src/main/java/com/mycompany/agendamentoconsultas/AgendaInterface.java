@@ -12,18 +12,6 @@ package com.mycompany.agendamentoconsultas;
  * @author maycondouglas
  * 
  */
-public interface Users {
-    /*
-    int id;
-    String name;
-    String birthdate;
-    String address;
-    char gender;
-    String phoneNumber;
-    String email;
-    boolean isDoctor;
-    boolean isAdmin;
-    String loginDocument;
-    String password;
-    */
+public interface AgendaInterface {
+    
 }

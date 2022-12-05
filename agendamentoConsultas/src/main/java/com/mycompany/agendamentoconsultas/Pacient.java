@@ -15,45 +15,54 @@ import java.util.Date;
  * 
  */
 public class Pacient extends Person {
-    //FIELDS
-    private Person person;
-    private String cpf;
-    private String healthInsurance;
-    
-    public Pacient(Person person, String cpf, String healthInsurance, String name, Date birthdate, String address, String gender, String phoneNumber, String email, String password) {
-        super(name, birthdate, address, gender, phoneNumber, email, password);
-        this.person = person;
-        this.cpf = cpf;
-        this.healthInsurance = healthInsurance;
-    }
+	// FIELDS
+	//private Person person;
+	private String cpf;
+	private String healthInsurance;
 
-    public Person getPerson() {
-        return person;
-    }
+	//public Pacient(Person person, String cpf, String healthInsurance, String name, Date birthdate, String address,
+	
+	public Pacient() {
+		//super();
+	}
+	
+	public Pacient(String cpf, String healthInsurance, String name, Date birthdate, String address,
+			String gender, String phoneNumber, String email, String password) {
+		super(name, birthdate, address, gender, phoneNumber, email, password);
+		//this.person = person;
+		this.cpf = cpf;
+		this.healthInsurance = healthInsurance;
+	}
+/*
+	public Person getPerson() {
+		return person;
+	}
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+	*/
 
-    public String getCpf() {
-        return cpf;
-    }
+	public String getCpf() {
+		return cpf;
+	}
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-    public String getHealthInsurance() {
-        return healthInsurance;
-    }
+	public String getHealthInsurance() {
+		return healthInsurance;
+	}
 
-    public void setHealthInsurance(String healthInsurance) {
-        this.healthInsurance = healthInsurance;
-    }
-    
-    //METHODS
-    
-    //agendar - somente para si (UPDATE Agenda - polimorfismo de método de Person)
-    
-    //ver consultas agendadas (READ Agenda - search by pacient - polimorfismo de método de Person)
+	public void setHealthInsurance(String healthInsurance) {
+		this.healthInsurance = healthInsurance;
+	}
+
+	// METHODS
+
+	// agendar - somente para si (UPDATE Agenda - polimorfismo de método de Person)
+
+	// ver consultas agendadas (READ Agenda - search by pacient - polimorfismo de
+	// método de Person)
 }

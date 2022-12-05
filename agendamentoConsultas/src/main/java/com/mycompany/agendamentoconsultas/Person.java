@@ -24,6 +24,8 @@ public abstract class Person {
     private String phoneNumber;
     private String email;
     private String password;
+    
+    public Person() {}
        
     public Person(String name, Date birthdate, String gender) {
         this.name = name;

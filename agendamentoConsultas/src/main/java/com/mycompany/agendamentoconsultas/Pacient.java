@@ -12,15 +12,26 @@ import java.util.Date;
  * @author eduardooliveira
  * @author mariacecilia
  * @author maycondouglas
- * 
+ *
  */
 public class Pacient extends Person {
+
     //FIELDS
     private Person person;
     private String cpf;
     private String healthInsurance;
-    
-    public Pacient(Person person, String cpf, String healthInsurance, String name, Date birthdate, String address, String gender, String phoneNumber, String email, String password) {
+
+    //public Pacient(Person person,
+    public Pacient(
+            String cpf,
+            String healthInsurance,
+            String name,
+            Date birthdate,
+            String address,
+            String gender,
+            String phoneNumber,
+            String email,
+            String password) {
         super(name, birthdate, address, gender, phoneNumber, email, password);
         this.person = person;
         this.cpf = cpf;
@@ -50,10 +61,8 @@ public class Pacient extends Person {
     public void setHealthInsurance(String healthInsurance) {
         this.healthInsurance = healthInsurance;
     }
-    
+
     //METHODS
-    
     //agendar - somente para si (UPDATE Agenda - polimorfismo de método de Person)
-    
     //ver consultas agendadas (READ Agenda - search by pacient - polimorfismo de método de Person)
 }

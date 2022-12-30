@@ -1,17 +1,17 @@
+package com.mycompany.agendamentoconsultas.model;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.mycompany.agendamentoconsultas;
+
 
 /**
  *
- * @author brunopedrosa
- * @author eduardooliveira
- * @author mariacecilia
- * @author maycondouglas
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
  * 
  */
 public interface UsersInterface {
-    public boolean loginUser(String document, String password);
+    public boolean login(String document, String password);
 }

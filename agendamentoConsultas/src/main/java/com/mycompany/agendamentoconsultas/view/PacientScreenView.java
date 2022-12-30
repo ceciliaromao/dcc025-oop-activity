@@ -4,7 +4,7 @@
  */
 package com.mycompany.agendamentoconsultas.view;
 
-//import com.mycompany.agendamentoconsultas.controller.UpdatePacient;
+import com.mycompany.agendamentoconsultas.controller.UpdatePacient;
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -25,7 +25,9 @@ public class PacientScreenView extends JFrame {
     
     public PacientScreenView(){
         super("Cadastro de Pacientes");
-        //this.addWindowListener(new UpdatePacient(this));
+        this.addWindowListener(new UpdatePacient(this));
     }
+    
+    
     
 }

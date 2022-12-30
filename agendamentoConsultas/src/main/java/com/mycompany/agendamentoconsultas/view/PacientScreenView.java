@@ -12,7 +12,9 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author mariacecilia
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
+ * 
  */
 public class PacientScreenView extends JFrame {
     private JPanel userPanel;

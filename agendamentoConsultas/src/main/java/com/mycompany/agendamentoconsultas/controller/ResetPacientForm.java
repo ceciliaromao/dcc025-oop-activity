@@ -6,7 +6,9 @@ package com.mycompany.agendamentoconsultas.controller;
 
 /**
  *
- * @author mariacecilia
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
+ * 
  */
 public class ResetPacientForm {
     

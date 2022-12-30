@@ -2,39 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.agendamentoconsultas;
-
-import java.util.Date;
+package com.mycompany.agendamentoconsultas.model;
 
 /**
  *
- * @author brunopedrosa
- * @author eduardooliveira
- * @author mariacecilia
- * @author maycondouglas
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
  *
  */
-public abstract class Person {
-
+abstract class Person implements UsersInterface {
     //FIELDS
     private String name;
-    private Date birthdate;
-    private String address;
     private String gender;
     private String phoneNumber;
     private String email;
     private String password;
        
-    public Person(String name, Date birthdate, String gender) {
+    public Person(String name, String email, String password) {
         this.name = name;
-        this.birthdate = birthdate;
-        this.gender = gender;
+        this.email = email;
+        this.password = password;
     }
     
-    public Person(String name, Date birthdate, String address, String gender, String phoneNumber, String email, String password) {
+    public Person(String name, String gender, String phoneNumber, String email, String password) {
         this.name = name;
-        this.birthdate = birthdate;
-        this.address = address;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -47,22 +38,6 @@ public abstract class Person {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getGender() {
@@ -96,17 +71,5 @@ public abstract class Person {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-    //METHODS
-    //realiza agendamento (UPDATE Agenda)
-
-    //consultar agenda (READ Agenda)
-    
-    
-    
-    
-    
-
     
 }

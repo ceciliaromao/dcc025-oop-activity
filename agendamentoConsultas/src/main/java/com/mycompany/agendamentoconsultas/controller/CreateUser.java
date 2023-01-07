@@ -8,7 +8,6 @@ import com.mycompany.agendamentoconsultas.view.UserScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 /**
  *
  * @author Fernando Giardini Nascimento Gonçalves

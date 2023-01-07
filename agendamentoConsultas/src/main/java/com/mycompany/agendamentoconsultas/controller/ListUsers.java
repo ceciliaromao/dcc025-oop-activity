@@ -25,18 +25,5 @@ public class ListUsers implements ListSelectionListener{
     @Override
     public void valueChanged(ListSelectionEvent e) {
     
-        int index = screenView.getUserList().getSelectedIndex();
-        
-        if(index != -1){
-            Person user = screenView.getUserList().getModel().getElementAt(index);
-            
-            screenView.getJtName().setText(user.getName());
-            screenView.getJtPhoneNumber().setText(user.getPhoneNumber());
-            screenView.getJtEmail().setText(user.getEmail());
-            screenView.getJPasswordField().setText(user.getPassword());
-            
-            screenView.setLastIndex(index);
-            
-        }
     }
 }

@@ -4,7 +4,7 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.view.PacientScreenView;
+import com.mycompany.agendamentoconsultas.view.UserScreenView;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -14,11 +14,11 @@ import java.awt.event.WindowListener;
  * @author Maria Cecília Romão Santos
  * 
  */
-public class UpdatePacient implements WindowListener{
+public class UpdateUser implements WindowListener {
     private static final String PATH = "..\\utils\\pacients.json";
-    private final PacientScreenView screenView;
+    private final UserScreenView screenView;
 
-    public UpdatePacient(PacientScreenView screenView) {
+    public UpdateUser(UserScreenView screenView) {
         this.screenView = screenView;
     }
 

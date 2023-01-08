@@ -10,19 +10,19 @@ package com.mycompany.agendamentoconsultas.model;
  * @author Maria Cecília Romão Santos
  *
  */
-public class Doctor extends Employee {
+public class Doctor extends Person {
     //FIELDS
     private String crm;
     private String specialty;
 
-    public Doctor(String crm, String specialty, String name, String email, String password) {
+    public Doctor(String crm, String specialty, String name, String email, String password) throws UserRegistrationException {
         super(name, email, password);
         this.crm = crm;
         this.specialty = specialty;
     }
 
-    public Doctor(String crm, String specialty, String name, String gender, String phoneNumber, String email, String password) {
-        super(name, gender, phoneNumber, email, password);
+    public Doctor(String crm, String specialty, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
+        super(name, phoneNumber, email, password);
         this.crm = crm;
         this.specialty = specialty;
     }

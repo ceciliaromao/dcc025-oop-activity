@@ -17,13 +17,6 @@ public abstract class Person implements UsersInterface {
     private String email;
     private String password;
     private boolean active;
-       
-    public Person(String name, String email, String password) throws UserRegistrationException {
-        this.setName(name);
-        this.setEmail(email);
-        this.setPassword(password);
-        this.active = true;
-    }
     
     public Person(String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         this.setName(name);

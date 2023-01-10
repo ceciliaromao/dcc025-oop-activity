@@ -14,21 +14,29 @@ public class Pacient extends Person {
     //FIELDS
     private String cpf;
 
-    public Pacient(String cpf, String name, String email, String password) {
+    public Pacient(String cpf, String name, String email, String password) throws UserRegistrationException {
         super(name, email, password);
-        this.cpf = cpf;
+        this.setCpf(cpf);
     }
 
-    public Pacient(String cpf, String name, String gender, String phoneNumber, String email, String password) {
-        super(name, gender, phoneNumber, email, password);
-        this.cpf = cpf;
+    public Pacient(String cpf, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
+        super(name, phoneNumber, email, password);
+        this.setCpf(cpf);
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(String cpf) throws UserRegistrationException{
+        if(cpf.length() != 11) throw new UserRegistrationException("CPF inválido");
+        
+        for (int i = 0; i < cpf.length(); i++) {
+            if (cpf.charAt(i) < '0' || cpf.charAt(i) > '9') {
+                throw new UserRegistrationException("Informe apenas números no CPF");
+            }
+        }
+        
         this.cpf = cpf;
     }
 

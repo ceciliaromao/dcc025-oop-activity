@@ -4,7 +4,14 @@
  */
 package com.mycompany.agendamentoconsultas.view;
 
-import com.google.gson.Gson;
+/**
+ *
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
+ *
+ */
+
+/*import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -14,18 +21,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
-/**
- *
- * @author Fernando Giardini Nascimento Gonçalves
- * @author Maria Cecília Romão Santos
- * 
- */
+import javax.swing.JOptionPane;*/
 public class AgendamentoConsultas {
 
-    public static void main(String[] args) throws ParseException, IOException {
-           
+//<<<<<<< HEAD
+    public static void main(String[] args) /*throws ParseException, IOException */ {
+        System.out.println("teste!!!");
 //        String name;
 //        String birthStr;
 //        String gender;
@@ -109,5 +110,12 @@ public class AgendamentoConsultas {
 //            }
 //        }
 //        key.close();
+
+        /*public static void main(String[] args) {
+        UserScreenView userScreenView = new UserScreenView();
+        userScreenView.display();
+        userScreenView.pack();
+>>>>>>> b6e60ef891b255953d9399ba627c327f4460f9cf
+    }*/
     }
 }

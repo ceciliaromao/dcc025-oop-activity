@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.ArrayList;
+import javax.swing.JList;
 
 /**
  *
@@ -68,6 +69,6 @@ public class CreateUser implements ActionListener {
         } catch (UserRegistrationException ex) {
             System.out.println("Algo deu errado ao criar o usuário: " + ex.getMessage());
         }
-
+       
     }
 }

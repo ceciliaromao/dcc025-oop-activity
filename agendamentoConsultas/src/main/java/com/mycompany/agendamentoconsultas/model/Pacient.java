@@ -17,11 +17,13 @@ public class Pacient extends Person {
     public Pacient(String cpf, String name, String email, String password) throws UserRegistrationException {
         super(name, email, password);
         this.setCpf(cpf);
+        this.setDocument(cpf);
     }
 
     public Pacient(String cpf, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         super(name, phoneNumber, email, password);
         this.setCpf(cpf);
+        this.setDocument(cpf);
     }
 
     public String getCpf() {

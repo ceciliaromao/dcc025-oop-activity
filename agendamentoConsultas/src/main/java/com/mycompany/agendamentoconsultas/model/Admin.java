@@ -18,11 +18,13 @@ public class Admin extends Person {
     public Admin(String registration, String name, String email, String password) throws UserRegistrationException {
         super(name, email, password);
         this.registration = registration;
+        this.setDocument(registration);
     }
     
     public Admin(String registration, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         super(name, phoneNumber, email, password);
         this.registration = registration;
+        this.setDocument(registration);
     }
     
     public String getRegistration() {

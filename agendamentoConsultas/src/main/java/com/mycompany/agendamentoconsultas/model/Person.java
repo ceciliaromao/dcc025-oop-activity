@@ -16,6 +16,7 @@ public abstract class Person implements UsersInterface {
     private String phoneNumber;
     private String email;
     private String password;
+    private String document;
     private boolean active;
        
     public Person(String name, String email, String password) throws UserRegistrationException {
@@ -88,4 +89,12 @@ public abstract class Person implements UsersInterface {
     public void setActive(boolean active) {
         this.active = active;
     }    
+    
+    public void setDocument(String doc) {
+        this.document = doc;
+    }
+    
+    public String getDocument(){
+        return document;
+    }
 }

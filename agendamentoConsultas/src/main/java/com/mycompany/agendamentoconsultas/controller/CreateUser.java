@@ -43,21 +43,21 @@ public class CreateUser implements ActionListener {
                             screenView.getJtName().getText(),
                             screenView.getJtPhoneNumber().getText(),
                             screenView.getJtEmail().getText(),
-                            Arrays.toString(screenView.getJtPasswordField().getPassword())));
+                            Arrays.toString(screenView.getJPasswordField().getPassword())));
                     break;
                 case 8:
                     model.addElement(new Doctor(document,
                             screenView.getJtName().getText(),
                             screenView.getJtPhoneNumber().getText(),
                             screenView.getJtEmail().getText(),
-                            Arrays.toString(screenView.getJtPasswordField().getPassword())));
+                            Arrays.toString(screenView.getJPasswordField().getPassword())));
                     break;
                 case 5:
                     model.addElement(new Admin(document,
                             screenView.getJtName().getText(),
                             screenView.getJtPhoneNumber().getText(),
                             screenView.getJtEmail().getText(),
-                            Arrays.toString(screenView.getJtPasswordField().getPassword())));
+                            Arrays.toString(screenView.getJPasswordField().getPassword())));
                     break;
                 default:
                     throw new AssertionError();

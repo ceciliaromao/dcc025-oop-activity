@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 public class AgendamentoConsultas {
 
     public static void main(String[] args) throws ParseException, IOException {
+           
 //        String name;
 //        String birthStr;
 //        String gender;

@@ -109,11 +109,11 @@ public class UserScreenView extends JFrame {
         this.jtSpecialty = jtSpecialty;
     }
 
-    public JPasswordField getJPasswordField() {
+    public JPasswordField getJtPasswordField() {
         return jPasswordField;
     }
 
-    public void setJPasswordField(JPasswordField jPasswordField) {
+    public void setJtPasswordField(JPasswordField jPasswordField) {
         this.jPasswordField = jPasswordField;
     }
 

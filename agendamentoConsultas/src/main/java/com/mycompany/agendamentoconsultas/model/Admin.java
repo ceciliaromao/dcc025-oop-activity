@@ -4,29 +4,28 @@
  */
 package com.mycompany.agendamentoconsultas.model;
 
-
 /**
  *
  * @author Fernando Giardini Nascimento Gonçalves
  * @author Maria Cecília Romão Santos
- * 
+ *
  */
 public class Admin extends Person {
+
     //FIELDS
     private String registration;
 
     public Admin(String registration, String name, String email, String password) throws UserRegistrationException {
         super(name, email, password);
         this.registration = registration;
-        this.setDocument(registration);
     }
-    
+
     public Admin(String registration, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         super(name, phoneNumber, email, password);
         this.registration = registration;
-        this.setDocument(registration);
+
     }
-    
+
     public String getRegistration() {
         return registration;
     }
@@ -34,10 +33,10 @@ public class Admin extends Person {
     public void setRegistration(String registration) {
         this.registration = registration;
     }
-    
+
     @Override
     public boolean login(String document, String password) {
         // TODO Implement login logic
         return false;
-    }    
+    }
 }

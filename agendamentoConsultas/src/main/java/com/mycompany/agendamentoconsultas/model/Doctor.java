@@ -19,14 +19,12 @@ public class Doctor extends Person {
         super(name, email, password);
         this.crm = crm;
         this.specialty = specialty;
-        this.setDocument(crm);
     }
 
     public Doctor(String crm, String specialty, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         super(name, phoneNumber, email, password);
         this.crm = crm;
         this.specialty = specialty;
-        this.setDocument(crm);
     }
 
     public String getCrm() {

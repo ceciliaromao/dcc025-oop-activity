@@ -194,7 +194,7 @@ public class UserScreenView extends JFrame {
         JPanel painelBotoes = new JPanel();
         
         JButton btnCreate = new JButton("Adiciona");
-        btnCreate.addActionListener(new CreateUser(this));
+        btnCreate.addActionListener(new CreateUser(this));//Reformular com base no novo design do software
         painelBotoes.add(btnCreate);
         
         JButton btnDelete = new JButton("Remove");

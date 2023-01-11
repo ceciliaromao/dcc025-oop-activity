@@ -11,21 +11,14 @@ package com.mycompany.agendamentoconsultas.model;
  *
  */
 public class Admin extends Person {
-
-    //FIELDS
     private String registration;
-
-    public Admin(String registration, String name, String email, String password) throws UserRegistrationException {
-        super(name, email, password);
-        this.registration = registration;
-    }
 
     public Admin(String registration, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         super(name, phoneNumber, email, password);
         this.registration = registration;
 
     }
-
+    
     public String getRegistration() {
         return registration;
     }

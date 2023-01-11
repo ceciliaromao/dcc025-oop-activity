@@ -6,15 +6,13 @@ package com.mycompany.agendamentoconsultas.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mycompany.agendamentoconsultas.model.Admin;
 import com.mycompany.agendamentoconsultas.model.Doctor;
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import com.mycompany.agendamentoconsultas.model.Person;
-import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,26 +21,63 @@ import java.util.logging.Logger;
  * 
  */
 public class JSONUtils {
-    public static String toJSON(Person user){
+    public static String toJSON(Pacient pacient){
         Gson gson = new Gson();
-        return gson.toJson(user);
+        return gson.toJson(pacient);
+    }
+        public static String toJSON(Doctor doctor){
+        Gson gson = new Gson();
+        return gson.toJson(doctor);
+    }
+        public static String toJSON(Admin adm){
+        Gson gson = new Gson();
+        return gson.toJson(adm);
     }
     
-    public static String toJSON(List<Person> users){
+    public static String pToJSON(List<Pacient> pacients){
         Gson gson = new Gson();
-        return gson.toJson(users);
+        return gson.toJson(pacients);
+    }
+    public static String dToJSON(List<Doctor> doctors){
+        Gson gson = new Gson();
+        return gson.toJson(doctors);
+    }
+    public static String aToJSON(List<Admin> admins){
+        Gson gson = new Gson();
+        return gson.toJson(admins);
     }
     
-    public static Person toPerson(String json){
+    public static Pacient toPacient(String json){
         Gson gson = new Gson();
-        Person user = gson.fromJson(json, Person.class);
-        return user;
+        Pacient pacient = gson.fromJson(json, Pacient.class);
+        return pacient;
+    }public static Doctor toDoctor(String json){
+        Gson gson = new Gson();
+        Doctor doctor = gson.fromJson(json, Doctor.class);
+        return doctor;
+    }
+    public static Admin toAdmin(String json){
+        Gson gson = new Gson();
+        Admin adm = gson.fromJson(json, Admin.class);
+        return adm;
     }
     
-    public static List<Person> toPersons(String json){
+    public static List<Pacient> toPacients(String json){
         Gson gson = new Gson();
-        Type personType = new TypeToken<ArrayList<Person>>(){}.getType();
-        List<Person> users = gson.fromJson(json, personType);
-        return users;
+        Type userType = new TypeToken<ArrayList<Pacient>>(){}.getType();
+        List<Pacient> pacients = gson.fromJson(json, userType);
+        return pacients;
+    }
+    public static List<Doctor> toDoctors(String json){
+        Gson gson = new Gson();
+        Type userType = new TypeToken<ArrayList<Doctor>>(){}.getType();
+        List<Doctor> doctors = gson.fromJson(json, userType);
+        return doctors;
+    }
+    public static List<Admin> toAdmins(String json){
+        Gson gson = new Gson();
+        Type userType = new TypeToken<ArrayList<Admin>>(){}.getType();
+        List<Admin> admins = gson.fromJson(json, userType);
+        return admins;
     }
 }

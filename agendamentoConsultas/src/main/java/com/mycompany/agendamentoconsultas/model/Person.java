@@ -17,13 +17,6 @@ public abstract class Person implements UsersInterface {
     private String email;
     private String password;
     private boolean active;
-       
-    public Person(String name, String email, String password) throws UserRegistrationException {
-        this.setName(name);
-        this.setEmail(email);
-        this.setPassword(password);
-        this.active = true;
-    }
     
     public Person(String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         this.setName(name);
@@ -57,7 +50,7 @@ public abstract class Person implements UsersInterface {
             }
         }
          
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber = "(" + phoneNumber.substring(0, 2) + ")" + phoneNumber.substring(2, 7) + "-" + phoneNumber.substring(7, 11);
     }
 
     public String getEmail() {

@@ -14,11 +14,6 @@ public class Pacient extends Person {
     //FIELDS
     private String cpf;
 
-    public Pacient(String cpf, String name, String email, String password) throws UserRegistrationException {
-        super(name, email, password);
-        this.setCpf(cpf);
-    }
-
     public Pacient(String cpf, String name, String phoneNumber, String email, String password) throws UserRegistrationException {
         super(name, phoneNumber, email, password);
         this.setCpf(cpf);
@@ -37,7 +32,8 @@ public class Pacient extends Person {
             }
         }
         
-        this.cpf = cpf;
+        this.cpf = cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "."
+                   + cpf.substring(6, 9) + "-" + cpf.substring(9, 11);
     }
 
     @Override

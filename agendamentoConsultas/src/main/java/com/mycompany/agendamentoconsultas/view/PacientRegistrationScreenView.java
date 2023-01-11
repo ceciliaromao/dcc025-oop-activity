@@ -4,20 +4,18 @@
  */
 package com.mycompany.agendamentoconsultas.view;
 
-import com.mycompany.agendamentoconsultas.controller.CreateUser;
-import com.mycompany.agendamentoconsultas.controller.DeleteUser;
-import com.mycompany.agendamentoconsultas.controller.EditUser;
-import com.mycompany.agendamentoconsultas.controller.ListUsers;
-import com.mycompany.agendamentoconsultas.controller.ResetUserForm;
-import com.mycompany.agendamentoconsultas.controller.UpdateUser;
-import com.mycompany.agendamentoconsultas.model.Person;
+import com.mycompany.agendamentoconsultas.controller.CreatePacient;
+import com.mycompany.agendamentoconsultas.controller.DeletePacient;
+import com.mycompany.agendamentoconsultas.controller.EditPacient;
+import com.mycompany.agendamentoconsultas.controller.ListPacients;
+import com.mycompany.agendamentoconsultas.controller.ResetPacientForm;
+import com.mycompany.agendamentoconsultas.model.Pacient;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -33,34 +31,27 @@ import javax.swing.ListSelectionModel;
  * @author Maria Cecília Romão Santos
  * 
  */
-public class UserScreenView extends JFrame {
-    private JPanel userPanel;
-    
-    private JList<Person> userList;
-    
+public class PacientRegistrationScreenView extends JFrame {
+    private JPanel pacientPanel;
+    private JList<Pacient> pacientList;
     private JTextField jtName;
     private JTextField jtPhoneNumber;
     private JTextField jtEmail;
-    private JComboBox jcbType;
-    private JTextField jtDocument;
-    private JTextField jtSpecialty;
     private JPasswordField jPasswordField;
+    private JTextField jtCPF; 
     
-    private int lastIndex;
-    
-    public UserScreenView(){
+    public PacientRegistrationScreenView(){
         super("Cadastro de Pacientes");
-        this.addWindowListener(new UpdateUser(this));
     }
 
-    public JList<Person> getUserList() {
-        return userList;
+    public JList<Pacient> getPacientList() {
+        return pacientList;
     }
 
-    public void setUserList(JList<Person> userList) {
-        this.userList = userList;
+    public void setPacientList(JList<Pacient> pacientList) {
+        this.pacientList = pacientList;
     }
-
+    
     public JTextField getJtName() {
         return jtName;
     }
@@ -85,30 +76,6 @@ public class UserScreenView extends JFrame {
         this.jtEmail = jtEmail;
     }
 
-    public JComboBox getJcbType() {
-        return jcbType;
-    }
-
-    public void setJcbType(JComboBox jcbType) {
-        this.jcbType = jcbType;
-    }
-
-    public JTextField getJtDocument() {
-        return jtDocument;
-    }
-
-    public void setJtDocument(JTextField jtDocument) {
-        this.jtDocument = jtDocument;
-    }
-
-    public JTextField getJtSpecialty() {
-        return jtSpecialty;
-    }
-
-    public void setJtSpecialty(JTextField jtSpecialty) {
-        this.jtSpecialty = jtSpecialty;
-    }
-
     public JPasswordField getJPasswordField() {
         return jPasswordField;
     }
@@ -117,31 +84,32 @@ public class UserScreenView extends JFrame {
         this.jPasswordField = jPasswordField;
     }
 
-    public int getLastIndex() {
-        return lastIndex;
+    public JTextField getJtCPF() {
+        return jtCPF;
     }
 
-    public void setLastIndex(int lastIndex) {
-        this.lastIndex = lastIndex;
+    public void setJtCPF(JTextField jtCPF) {
+        this.jtCPF = jtCPF;
     }
+
     
     private void createMenu(){
         JPanel menuPanel = new JPanel();
-        menuPanel.setBorder(BorderFactory.createTitledBorder("Usuários"));
+        menuPanel.setBorder(BorderFactory.createTitledBorder("Pacientes:"));
         menuPanel.setPreferredSize(new Dimension(120, 200));
         
-        DefaultListModel<Person> model = new DefaultListModel<>();
+        DefaultListModel<Pacient> model = new DefaultListModel<>();
         
-        userList = new JList<>(model);
-        userList.setVisible(true);
-        userList.setPreferredSize(new Dimension(95, 300));
-        userList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        pacientList = new JList<>(model);
+        pacientList.setVisible(true);
+        pacientList.setPreferredSize(new Dimension(95, 300));
+        pacientList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
-        userList.addListSelectionListener(new ListUsers(this));
+        pacientList.addListSelectionListener(new ListPacients(this));
         
-        menuPanel.add(new JScrollPane(userList), BorderLayout.EAST);
+        menuPanel.add(new JScrollPane(pacientPanel), BorderLayout.EAST);
         
-        this.userPanel.add(menuPanel, BorderLayout.WEST);
+        this.pacientPanel.add(menuPanel, BorderLayout.WEST);
     }
     
     private void createForm(){
@@ -167,21 +135,10 @@ public class UserScreenView extends JFrame {
         panelLabel.add(jlEmail);
         panelTextField.add(jtEmail);
         
-        JLabel jlType = new JLabel("Tipo de Usuário: ");
-        String[] options = {"Paciente", "Médico", "Administrador"};
-        jcbType = new JComboBox(options);
-        panelLabel.add(jlType);
-        panelTextField.add(jcbType);
-        
-        JLabel jlDocument = new JLabel("Documento: ");
-        jtDocument = new JTextField(20);
-        panelLabel.add(jlDocument);
-        panelTextField.add(jtDocument);
-        
-        JLabel jlSpecialty = new JLabel("Especialidade: ");
-        jtSpecialty = new JTextField(20);
-        panelLabel.add(jlSpecialty);
-        panelTextField.add(jtSpecialty);
+        JLabel jlCPF = new JLabel("CPF: ");
+        jtCPF = new JTextField(20);
+        panelLabel.add(jlCPF);
+        panelTextField.add(jtCPF);
         
         JLabel jlPassword = new JLabel("Especialidade: ");
         jPasswordField = new JPasswordField(20);
@@ -194,37 +151,37 @@ public class UserScreenView extends JFrame {
         JPanel painelBotoes = new JPanel();
         
         JButton btnCreate = new JButton("Adiciona");
-        btnCreate.addActionListener(new CreateUser(this));
+        btnCreate.addActionListener(new CreatePacient(this));
         painelBotoes.add(btnCreate);
         
         JButton btnDelete = new JButton("Remove");
-        btnDelete.addActionListener(new DeleteUser(this));
+        btnDelete.addActionListener(new DeletePacient(this));
         painelBotoes.add(btnDelete);
         
         JButton btnUpdate = new JButton("Atualiza");
-        btnUpdate.addActionListener(new EditUser(this));
+        btnUpdate.addActionListener(new EditPacient(this));
         painelBotoes.add(btnUpdate);
         
         JButton btnReset = new JButton("Limpa");
-        btnReset.addActionListener(new ResetUserForm(this));
+        btnReset.addActionListener(new ResetPacientForm(this));
         painelBotoes.add(btnReset);
         
         formPanel.add(painelBotoes, BorderLayout.SOUTH);
         
-        this.userPanel.add(formPanel, BorderLayout.CENTER);
+        this.pacientPanel.add(formPanel, BorderLayout.CENTER);
     }
     
     public void display(){
         this.setSize(300, 200);
         this.setVisible(true);
         
-        this.userPanel = new JPanel();
-        this.userPanel.setLayout(new BorderLayout());
+        this.pacientPanel = new JPanel();
+        this.pacientPanel.setLayout(new BorderLayout());
         
         createMenu();
         createForm();
         
-        this.add(this.userPanel);
+        this.add(this.pacientPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         this.repaint();

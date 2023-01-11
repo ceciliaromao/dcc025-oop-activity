@@ -4,10 +4,9 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.view.UserScreenView;
+import com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 /**
  *
@@ -15,15 +14,16 @@ import java.awt.event.ActionListener;
  * @author Maria Cecília Romão Santos
  * 
  */
-public class EditUser implements ActionListener {
-    private UserScreenView screenView;
+public class DeletePacient implements ActionListener {
+    private PacientRegistrationScreenView screenView;
     
-    public EditUser(UserScreenView screenView){
+    public DeletePacient(PacientRegistrationScreenView screenView){
         this.screenView = screenView;
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
+    
 }

@@ -5,7 +5,7 @@
 package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.model.Person;
-import com.mycompany.agendamentoconsultas.view.UserScreenView;
+import com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -15,10 +15,10 @@ import javax.swing.event.ListSelectionListener;
  * @author Maria Cecília Romão Santos
  * 
  */
-public class ListUsers implements ListSelectionListener{
-    private UserScreenView screenView;
+public class ListPacients implements ListSelectionListener{
+    private PacientRegistrationScreenView screenView;
 
-    public ListUsers(UserScreenView screenView) {
+    public ListPacients(PacientRegistrationScreenView screenView) {
         this.screenView = screenView;
     }
     

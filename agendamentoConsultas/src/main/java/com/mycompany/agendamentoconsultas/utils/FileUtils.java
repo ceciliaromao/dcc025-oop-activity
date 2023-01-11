@@ -4,12 +4,17 @@
  */
 package com.mycompany.agendamentoconsultas.utils;
 
+import com.mycompany.agendamentoconsultas.model.UserLists;
+import com.mycompany.agendamentoconsultas.view.ScreenView;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,14 +22,18 @@ import java.util.Scanner;
  * @author Maria Cecília Romão Santos
  * 
  */
-public class FileUtils {
+public class FileUtils implements WindowListener{
+    private ScreenView screenview;
+    
+    public FileUtils(ScreenView screenView){
+        this.screenview = screenView;
+    }
+    
     public static String readFile(String path) throws FileNotFoundException {
         StringBuilder content = new StringBuilder();
-        File f = new File(path);
-        Scanner reader = new Scanner(f);
-        while (reader.hasNextLine()) {
-            content.append(reader.nextLine()).append("\n");
-        }
+        File file = new File(path);
+        Scanner reader = new Scanner(file);
+        while (reader.hasNextLine())  content.append(reader.nextLine()).append("\n");
         
         return content.toString();
     }
@@ -33,14 +42,57 @@ public class FileUtils {
         FileWriter fwFile;
         BufferedWriter bwFile;
 
-        File f = new File(path);
+        try{
+            File file = new File(path);
+            fwFile = new FileWriter(file, false);
+            bwFile = new BufferedWriter(fwFile);
+            bwFile.write(content + "\n");
+            bwFile.close();
+            fwFile.close();
+        } catch(IOException e){
+            System.err.println(e.toString() + "can not be written");
+        }
+    }
 
-        fwFile = new FileWriter(f, false);
-        bwFile = new BufferedWriter(fwFile);
+    @Override
+    public void windowOpened(WindowEvent e) {
+        try {
+            String pacientFile = readFile("pacients.json");
+            String doctorFile = readFile("doctors.json");
+            String adminFile = readFile("admin.json");
 
-        bwFile.write(content);
+            UserLists.setPacients(JSONUtils.toPacients(pacientFile)); 
+            UserLists.setDoctors(JSONUtils.toDoctors(doctorFile));
+            UserLists.setAdmin(JSONUtils.toAdmins(adminFile));
 
-        bwFile.close();
-        fwFile.close();
+            this.screenview.repaint();
+
+        } catch(FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "File not found");
+        }
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
     }
 }

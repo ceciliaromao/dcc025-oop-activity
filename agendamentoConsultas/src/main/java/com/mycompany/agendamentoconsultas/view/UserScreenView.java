@@ -36,7 +36,7 @@ import javax.swing.ListSelectionModel;
 public class UserScreenView extends JFrame {
     private JPanel userPanel;
     
-    private JList<Person> userList;
+    private JList<Person> userList;//Verificar interação com o arquivo controller.java
     
     private JTextField jtName;
     private JTextField jtPhoneNumber;

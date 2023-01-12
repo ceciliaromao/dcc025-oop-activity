@@ -4,25 +4,24 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView;
+import com.mycompany.agendamentoconsultas.view.DoctorRegistrationScreenView;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 /**
  *
- * @author Fernando Giardini Nascimento Gonçalves
- * @author Maria Cecília Romão Santos
- * 
+ * @author Fernando
  */
-public class ListPacients implements ListSelectionListener{
-    private PacientRegistrationScreenView screenView;
+public class ListDoctors implements ListSelectionListener {
 
-    public ListPacients(PacientRegistrationScreenView screenView) {
+    private DoctorRegistrationScreenView screenView;
+
+    public ListDoctors(DoctorRegistrationScreenView screenView) {
         this.screenView = screenView;
     }
-    
+
     @Override
     public void valueChanged(ListSelectionEvent e) {
-       //TODO
+        //TODO
     }
 }

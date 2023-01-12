@@ -4,42 +4,40 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.model.Pacient;
-import com.mycompany.agendamentoconsultas.model.Person;
+import com.mycompany.agendamentoconsultas.model.Controller;
+import com.mycompany.agendamentoconsultas.model.Admin;
 import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
-import com.mycompany.agendamentoconsultas.view.UserScreenView;
+import com.mycompany.agendamentoconsultas.view.AdminRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Fernando
  */
-public class CreateAdmin implements ActionListener{
-     private UserScreenView screenView;
-    
-    public CreateAdmin(UserScreenView screenView) {
+public class CreateAdmin implements ActionListener {
+
+    private AdminRegistrationScreenView screenView;
+
+    public CreateAdmin(AdminRegistrationScreenView screenView) {
         this.screenView = screenView;
     }
-    
-      @Override
+
+    @Override
     public void actionPerformed(ActionEvent e) {
-    
-         List<Person> userList = new ArrayList<>();
-         
-         try{
-             userList.add(new Pacient(screenView.getJtDocument().getText(),
-                            screenView.getJtName().getText(),
-                            screenView.getJtPhoneNumber().getText(),
-                            screenView.getJtEmail().getText(),
-                            screenView.getJPasswordField().getPassword().toString()));
-         }catch(UserRegistrationException ex){
-             System.out.println("Algo deu errado ao criar o Administrador: " + ex.getMessage());
-         }
-        
-         
-         //TODO Integração com Arquivo Json de pacientes.
-    } 
+
+        List<Admin> theAdminsList = Controller.getAdmins();
+
+        try {
+            theAdminsList.add(new Admin(screenView.getJtRegistration().getText(),
+                    screenView.getJtName().getText(),
+                    screenView.getJtPhoneNumber().getText(),
+                    screenView.getJtEmail().getText(),
+                    screenView.getJPasswordField().getPassword().toString()));
+        } catch (UserRegistrationException ex) {
+            System.out.println("Algo deu errado ao criar o Administrador: " + ex.getMessage());
+        }
+
+    }
 }

@@ -4,27 +4,23 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView;
+
+import com.mycompany.agendamentoconsultas.view.AdminRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 /**
  *
- * @author Fernando Giardini Nascimento Gonçalves
- * @author Maria Cecília Romão Santos
- *
+ * @author Fernando
  */
-public class DeletePacient implements ActionListener {
-
-    private PacientRegistrationScreenView screenView;
-
-    public DeletePacient(PacientRegistrationScreenView screenView) {
+public class ResetAdminForm implements ActionListener{
+      private AdminRegistrationScreenView screenView;
+    
+    public ResetAdminForm(AdminRegistrationScreenView screenView){
         this.screenView = screenView;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //TODO
+         //TODO
     }
-
 }

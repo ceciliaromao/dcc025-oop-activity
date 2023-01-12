@@ -4,10 +4,23 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
+import com.mycompany.agendamentoconsultas.view.DoctorRegistrationScreenView;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 /**
  *
  * @author Fernando
  */
-public class DeleteDoctor {
+public class DeleteDoctor implements ActionListener{
     
+    private DoctorRegistrationScreenView ScreenView;
+        
+    public DeleteDoctor(DoctorRegistrationScreenView DocScreenView){
+        this.ScreenView = DocScreenView;
+    }
+    
+       @Override
+    public void actionPerformed(ActionEvent e) {
+       //TODO
+    }
 }

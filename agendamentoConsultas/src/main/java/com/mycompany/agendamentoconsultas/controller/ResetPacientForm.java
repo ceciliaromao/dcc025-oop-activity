@@ -23,6 +23,6 @@ public class ResetPacientForm implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+         //TODO
     }
 }

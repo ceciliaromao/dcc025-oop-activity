@@ -9,5 +9,5 @@ package com.mycompany.agendamentoconsultas.controller;
  * @author Fernando
  */
 public class ReadDoctor {
-    
+                                         //DESCONFIO QUE O READ NESTE CASO COM JAVA SWING NÃO SERÁ NECESSÁRIO, CASO ISSO SEJA VERDADE EXCLUIMOS ESTE ARQUIVO
 }

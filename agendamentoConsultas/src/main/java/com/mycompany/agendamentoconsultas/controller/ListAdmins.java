@@ -5,22 +5,23 @@
 package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.view.AdminRegistrationScreenView;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
  * @author Fernando
  */
-public class EditAdmin implements ActionListener {
+public class ListAdmins implements ListSelectionListener {
+
     private AdminRegistrationScreenView screenView;
-    
-    public EditAdmin(AdminRegistrationScreenView screenView){
+
+    public ListAdmins(AdminRegistrationScreenView screenView) {
         this.screenView = screenView;
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void valueChanged(ListSelectionEvent e) {
         //TODO
     }
 }

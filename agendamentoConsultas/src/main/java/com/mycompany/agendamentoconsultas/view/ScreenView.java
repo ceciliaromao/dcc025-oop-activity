@@ -4,8 +4,10 @@
  */
 package com.mycompany.agendamentoconsultas.view;
 
+import com.mycompany.agendamentoconsultas.controller.LoginPacient;
 import com.mycompany.agendamentoconsultas.utils.FileUtils;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;

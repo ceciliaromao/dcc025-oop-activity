@@ -4,7 +4,7 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.model.Controller;
+import com.mycompany.agendamentoconsultas.model.UserLists;
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
 import com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView;
@@ -28,7 +28,7 @@ public class CreatePacient implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        List<Pacient> thePacientsList = Controller.getPacients();
+        List<Pacient> thePacientsList = UserLists.getPacients();
 
         try {
             thePacientsList.add(new Pacient(screenView.getJtCPF().getText(),

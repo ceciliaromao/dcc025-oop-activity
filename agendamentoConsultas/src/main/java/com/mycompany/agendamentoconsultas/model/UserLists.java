@@ -13,12 +13,12 @@ import java.util.List;
  */
 public class UserLists {
     private static List<Doctor> doctors;
-    private static List<Admin> admin;
+    private static List<Admin> admins;
     private static List<Pacient> pacients;
     
     static {
         doctors = new ArrayList<>();
-        admin = new ArrayList<>();
+        admins = new ArrayList<>();
         pacients = new ArrayList<>();
     }
     
@@ -31,7 +31,7 @@ public class UserLists {
     }
     
     public static List<Admin> getAdmins() {
-        return admin;
+        return admins;
     }
  
     public static void setDoctors(List<Doctor> doctors) {
@@ -39,7 +39,7 @@ public class UserLists {
     }
 
     public static void setAdmin(List<Admin> admin) {
-        UserLists.admin = admin;
+        UserLists.admins = admin;
     }
 
     public static void setPacients(List<Pacient> pacients) {

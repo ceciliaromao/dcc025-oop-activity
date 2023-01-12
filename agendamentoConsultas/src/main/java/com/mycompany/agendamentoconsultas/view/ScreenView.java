@@ -43,15 +43,11 @@ public class ScreenView extends JFrame{
         jpButtons.setLayout(new FlowLayout());
         jpButtons.setPreferredSize(new Dimension(150, 180));
         
-        JButton btnSecretaria = new JButton("Paciente");
-        btnSecretaria.addActionListener(new LoginPacient(this));
-        jpButtons.add(btnSecretaria);
+        JButton btnPacient = new JButton("Paciente");
+        btnPacient.addActionListener(new LoginPacient(this));
+        jpButtons.add(btnPacient);  
         
-        JButton btnMedico = new JButton("Sou médico(a)");
-        btnMedico.addActionListener(new LoginMedico(this));
-        jpButtons.add(btnMedico);
-        
-        this.principal.add(jpButtons, BorderLayout.WEST);
+        this.mainScreen.add(jpButtons, BorderLayout.WEST);
     }
     
     public void createScreenView(){

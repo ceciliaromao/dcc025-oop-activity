@@ -4,7 +4,7 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.model.Controller;
+import com.mycompany.agendamentoconsultas.model.UserLists;
 import com.mycompany.agendamentoconsultas.model.Admin;
 import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
 import com.mycompany.agendamentoconsultas.view.AdminRegistrationScreenView;
@@ -27,7 +27,7 @@ public class CreateAdmin implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        List<Admin> theAdminsList = Controller.getAdmins();
+        List<Admin> theAdminsList = UserLists.getAdmins();
 
         try {
             theAdminsList.add(new Admin(screenView.getJtRegistration().getText(),

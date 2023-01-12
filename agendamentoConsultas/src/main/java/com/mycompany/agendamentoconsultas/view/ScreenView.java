@@ -16,7 +16,9 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author mariacecilia
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
+ * 
  */
 public class ScreenView extends JFrame{
     private JPanel mainScreen;
@@ -50,7 +52,7 @@ public class ScreenView extends JFrame{
         this.mainScreen.add(jpButtons, BorderLayout.WEST);
     }
     
-    public void createScreenView(){
+    public void buildScreen(){
         createWindow();
         createLogin();
     }

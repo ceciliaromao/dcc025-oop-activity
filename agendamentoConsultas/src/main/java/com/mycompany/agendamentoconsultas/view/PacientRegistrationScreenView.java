@@ -140,11 +140,6 @@ public class PacientRegistrationScreenView extends JFrame {
         panelLabel.add(jlCPF);
         panelTextField.add(jtCPF);
         
-        JLabel jlPassword = new JLabel("Especialidade: ");
-        jPasswordField = new JPasswordField(20);
-        panelLabel.add(jlPassword);
-        panelTextField.add(jPasswordField);
-        
         formPanel.add(panelLabel, BorderLayout.WEST);
         formPanel.add(panelTextField, BorderLayout.EAST);
         

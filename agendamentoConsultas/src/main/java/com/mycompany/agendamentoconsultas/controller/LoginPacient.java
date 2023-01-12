@@ -17,7 +17,9 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author mariacecilia
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
+ * 
  */
 public class LoginPacient implements ActionListener {
     private ScreenView screenView;
@@ -67,7 +69,7 @@ public class LoginPacient implements ActionListener {
     private void cancelLogin(){
         windowFrame.setVisible(false);
         ScreenView newScreen = new ScreenView();
-        newScreen.createScreenView();
+        newScreen.buildScreen();
     }
     
     private void createLogin(){

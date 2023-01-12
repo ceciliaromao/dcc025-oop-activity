@@ -11,7 +11,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author mariacecilia
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
+ * 
  */
 public class AuthPacient implements ActionListener {
     private LoginPacient login;

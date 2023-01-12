@@ -42,11 +42,20 @@ public class ScreenView extends JFrame{
         JPanel jpButtons = new JPanel();
         jpButtons.setBorder(BorderFactory.createTitledBorder("Login"));
         jpButtons.setLayout(new FlowLayout());
-        jpButtons.setPreferredSize(new Dimension(150, 180));
+        jpButtons.setPreferredSize(new Dimension(300, 180));
         
         JButton btnPacient = new JButton("Paciente");
         btnPacient.addActionListener(new PacientLoginScreenView(this));
         jpButtons.add(btnPacient);  
+        
+        JButton btnDoctor = new JButton("Sou médico(a)");
+        btnDoctor.addActionListener(new DoctorLoginScreenView(this));
+        jpButtons.add(btnDoctor);
+        
+        JButton btnAdmin = new JButton("Sou secretaria");
+        btnAdmin.addActionListener(new AdminLoginScreenView(this));
+        jpButtons.add(btnAdmin);
+        
         
         this.mainScreen.add(jpButtons, BorderLayout.WEST);
     }
@@ -54,5 +63,11 @@ public class ScreenView extends JFrame{
     public void buildScreen(){
         createWindow();
         createLogin();
+        display();
+    }
+    
+    public static void main(String[] args) {
+        ScreenView screenview = new ScreenView();
+        screenview.buildScreen();
     }
 }

@@ -78,7 +78,7 @@ public class AdminLoginScreenView implements ActionListener {
         JPanel jpLogin = new JPanel();
         JPanel jpButtons = new JPanel();
         
-        jpLogin.add(new JLabel("Registration:"));
+        jpLogin.add(new JLabel("Mat.:"));
         this.jtRegistration = new JTextField(size);
         jpLogin.add(this.jtRegistration);
         

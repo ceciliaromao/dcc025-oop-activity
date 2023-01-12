@@ -48,11 +48,11 @@ public class ScreenView extends JFrame{
         btnPacient.addActionListener(new PacientLoginScreenView(this));
         jpButtons.add(btnPacient);  
         
-        JButton btnDoctor = new JButton("Sou médico(a)");
+        JButton btnDoctor = new JButton("Médico");
         btnDoctor.addActionListener(new DoctorLoginScreenView(this));
         jpButtons.add(btnDoctor);
         
-        JButton btnAdmin = new JButton("Sou secretaria");
+        JButton btnAdmin = new JButton("Administrador");
         btnAdmin.addActionListener(new AdminLoginScreenView(this));
         jpButtons.add(btnAdmin);
         

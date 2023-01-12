@@ -4,6 +4,7 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
+import com.mycompany.agendamentoconsultas.view.PacientLoginScreenView;
 import com.mycompany.agendamentoconsultas.model.UserLists;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,9 +17,9 @@ import javax.swing.JOptionPane;
  * 
  */
 public class AuthPacient implements ActionListener {
-    private LoginPacient login;
+    private PacientLoginScreenView login;
 
-    public AuthPacient(LoginPacient login) {
+    public AuthPacient(PacientLoginScreenView login) {
         this.login = login;
     }
     

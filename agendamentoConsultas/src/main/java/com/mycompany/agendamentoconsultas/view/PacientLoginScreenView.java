@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.agendamentoconsultas.controller;
+package com.mycompany.agendamentoconsultas.view;
 
+import com.mycompany.agendamentoconsultas.controller.AuthPacient;
 import com.mycompany.agendamentoconsultas.view.ScreenView;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -21,14 +22,14 @@ import javax.swing.JTextField;
  * @author Maria Cecília Romão Santos
  * 
  */
-public class LoginPacient implements ActionListener {
+public class PacientLoginScreenView implements ActionListener {
     private ScreenView screenView;
     private JFrame windowFrame;
     private JPanel mainPanel;
     private JTextField jtCPF;
     private JPasswordField jpPassword;
 
-    public LoginPacient(ScreenView screenView) {
+    public PacientLoginScreenView(ScreenView screenView) {
         this.screenView = screenView;
         this.windowFrame = new JFrame();
     }

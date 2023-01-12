@@ -4,7 +4,6 @@
  */
 package com.mycompany.agendamentoconsultas.view;
 
-import com.mycompany.agendamentoconsultas.controller.LoginPacient;
 import com.mycompany.agendamentoconsultas.utils.FileUtils;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -46,7 +45,7 @@ public class ScreenView extends JFrame{
         jpButtons.setPreferredSize(new Dimension(150, 180));
         
         JButton btnPacient = new JButton("Paciente");
-        btnPacient.addActionListener(new LoginPacient(this));
+        btnPacient.addActionListener(new PacientLoginScreenView(this));
         jpButtons.add(btnPacient);  
         
         this.mainScreen.add(jpButtons, BorderLayout.WEST);

@@ -4,8 +4,10 @@
  */
 package com.mycompany.agendamentoconsultas.view;
 
+import com.mycompany.agendamentoconsultas.controller.LoginPacient;
 import com.mycompany.agendamentoconsultas.utils.FileUtils;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -14,7 +16,9 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author mariacecilia
+ * @author Fernando Giardini Nascimento Gonçalves
+ * @author Maria Cecília Romão Santos
+ * 
  */
 public class ScreenView extends JFrame{
     private JPanel mainScreen;
@@ -45,14 +49,10 @@ public class ScreenView extends JFrame{
         btnSecretaria.addActionListener(new LoginPacient(this));
         jpButtons.add(btnSecretaria);
         
-        JButton btnMedico = new JButton("Sou médico(a)");
-        btnMedico.addActionListener(new LoginMedico(this));
-        jpButtons.add(btnMedico);
-        
-        this.principal.add(jpButtons, BorderLayout.WEST);
+        this.mainScreen.add(jpButtons, BorderLayout.WEST);
     }
     
-    public void createScreenView(){
+    public void buildScreen(){
         createWindow();
         createLogin();
     }

@@ -16,15 +16,14 @@ public class Agenda {
     private String pacientName;
     private String doctorName;
     private String doctorSpecialty;
-    private Date createdAt;
-    private Date deletedAt; //if != null não é visível na agenda
+    private boolean active;
     
     
     public Agenda(Date datetime, String doctorName, String doctorSpecialty) {
         this.datetime = datetime;
         this.doctorName = doctorName;
         this.doctorSpecialty = doctorSpecialty;
-        this.createdAt = new Date();
+        this.active = true;
     }
 
     public Date getDatetime() {
@@ -58,20 +57,12 @@ public class Agenda {
     public void setDoctorSpecialty(String doctorSpecialty) {
         this.doctorSpecialty = doctorSpecialty;
     }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
     
-    public Date getDeletedAt() {
-        return deletedAt;
+    public boolean getActive() {
+        return active;
     }
 
-    public void setDeletedAt(Date deletedAt) {
-        this.deletedAt = deletedAt;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

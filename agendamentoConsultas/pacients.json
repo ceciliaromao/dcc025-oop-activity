@@ -1,3 +1,9 @@
 [
-    
+  {
+    "cpf": "09861452702",
+    "name": "Maria Cecilia",
+    "phoneNumber": "(32)985091907",
+    "email": "cecilia@email.com",
+    "password": "123456"
+  }
 ]

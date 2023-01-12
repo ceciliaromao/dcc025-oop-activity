@@ -41,7 +41,7 @@ public class PacientRegistrationScreenView extends JFrame {
     private JTextField jtCPF; 
     
     public PacientRegistrationScreenView(){
-        super("Cadastro de Pacientes");
+        super("Registro de Pacientes");
     }
 
     public JList<Pacient> getPacientList() {
@@ -139,6 +139,11 @@ public class PacientRegistrationScreenView extends JFrame {
         jtCPF = new JTextField(20);
         panelLabel.add(jlCPF);
         panelTextField.add(jtCPF);
+        
+        JLabel jlPassword = new JLabel("Senha: ");
+        jPasswordField = new JPasswordField(20);
+        panelLabel.add(jlPassword);
+        panelTextField.add(jPasswordField);
         
         formPanel.add(panelLabel, BorderLayout.WEST);
         formPanel.add(panelTextField, BorderLayout.EAST);

@@ -133,12 +133,12 @@ public class AdminRegistrationScreenView extends JFrame{
         panelLabel.add(jlEmail);
         panelTextField.add(jtEmail);
         
-        JLabel jlCPF = new JLabel("CPF: ");
+        JLabel jlCPF = new JLabel("Matrícula: ");
         jtRegistration = new JTextField(20);
         panelLabel.add(jlCPF);
         panelTextField.add(jtRegistration);
         
-        JLabel jlPassword = new JLabel("Especialidade: ");
+        JLabel jlPassword = new JLabel("Senha: ");
         jPasswordField = new JPasswordField(20);
         panelLabel.add(jlPassword);
         panelTextField.add(jPasswordField);

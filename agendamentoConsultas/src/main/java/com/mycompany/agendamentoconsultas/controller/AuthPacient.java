@@ -6,6 +6,7 @@ package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.view.PacientLoginScreenView;
 import com.mycompany.agendamentoconsultas.model.UserLists;
+import com.mycompany.agendamentoconsultas.view.PacientMainScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -30,8 +31,8 @@ public class AuthPacient implements ActionListener {
             if(UserLists.getPacients().get(i).getCpf().equals(login.getJtCPF().getText()) 
                 && UserLists.getPacients().get(i).getPassword().equals(login.getJpPassword().getText())){
                 login.getWindowFrame().setVisible(false);
-                
-                //Open agenda (tela principal)
+                PacientMainScreenView pacientView = new PacientMainScreenView(UserLists.getPacients().get(i));
+                pacientView.buildScreen();
                 return;
             }
         }

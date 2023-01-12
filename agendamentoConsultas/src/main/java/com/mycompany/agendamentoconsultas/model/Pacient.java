@@ -32,13 +32,6 @@ public class Pacient extends Person {
             }
         }
         
-        this.cpf = cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "."
-                   + cpf.substring(6, 9) + "-" + cpf.substring(9, 11);
-    }
-
-    @Override
-    public boolean login(String document, String password) {
-        // TODO Implement login logic
-        return false;
-    }    
+        this.cpf = cpf;
+    }  
 }

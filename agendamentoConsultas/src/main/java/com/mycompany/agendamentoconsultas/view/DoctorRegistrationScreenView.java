@@ -142,12 +142,17 @@ public class DoctorRegistrationScreenView extends JFrame{
         panelLabel.add(jlEmail);
         panelTextField.add(jtEmail);
         
-        JLabel jlCPF = new JLabel("CPF: ");
+        JLabel jlCPF = new JLabel("CRM: ");
         jtCrm = new JTextField(20);
         panelLabel.add(jlCPF);
         panelTextField.add(jtCrm);
         
-        JLabel jlPassword = new JLabel("Especialidade: ");
+        JLabel jlSpecialty = new JLabel("Especialidade: ");
+        jtSpecialty = new JPasswordField(20);
+        panelLabel.add(jlSpecialty);
+        panelTextField.add(jtSpecialty);
+        
+        JLabel jlPassword = new JLabel("Senha: ");
         jPasswordField = new JPasswordField(20);
         panelLabel.add(jlPassword);
         panelTextField.add(jPasswordField);

@@ -35,7 +35,7 @@ public class Doctor extends Person {
         if (crm.charAt(5) < 'A' || crm.charAt(5) > 'Z') throw new UserRegistrationException("Informe CRM no formato: 99999UF");
         if (crm.charAt(6) < 'A' || crm.charAt(6) > 'Z') throw new UserRegistrationException("Informe CRM no formato: 99999UF");
          
-        this.crm = crm.substring(0,5) + "-" + crm.substring(5);
+        this.crm = crm;
     }
 
     public String getSpecialty() {
@@ -44,11 +44,5 @@ public class Doctor extends Person {
 
     public void setSpecialty(String specialty) {
         this.specialty = specialty;
-    }
-    
-    @Override
-    public boolean login(String document, String password) {
-        // TODO Implement login logic
-        return false;
-    }        
+    }      
 }

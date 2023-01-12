@@ -10,7 +10,7 @@ package com.mycompany.agendamentoconsultas.model;
  * @author Maria Cecília Romão Santos
  *
  */
-public abstract class Person implements UsersInterface {
+public abstract class Person {
     //FIELDS
     private String name;
     private String phoneNumber;
@@ -50,7 +50,7 @@ public abstract class Person implements UsersInterface {
             }
         }
          
-        this.phoneNumber = "(" + phoneNumber.substring(0, 2) + ")" + phoneNumber.substring(2, 7) + "-" + phoneNumber.substring(7, 11);
+        this.phoneNumber = "(" + phoneNumber.substring(0, 2) + ")" + phoneNumber.substring(2);
     }
 
     public String getEmail() {

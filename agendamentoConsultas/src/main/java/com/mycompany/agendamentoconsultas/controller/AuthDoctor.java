@@ -31,7 +31,7 @@ public class AuthDoctor implements ActionListener {
                 && UserLists.getDoctors().get(i).getPassword().equals(login.getJpPassword().getText())){
                 login.getWindowFrame().setVisible(false);
                 
-                //Open agenda (tela principal)
+                //Open agenda médico
                 return;
             }
         }

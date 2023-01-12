@@ -26,10 +26,4 @@ public class Admin extends Person {
     public void setRegistration(String registration) {
         this.registration = registration;
     }
-
-    @Override
-    public boolean login(String document, String password) {
-        // TODO Implement login logic
-        return false;
-    }
 }

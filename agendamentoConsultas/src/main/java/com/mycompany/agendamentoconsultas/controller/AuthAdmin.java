@@ -31,7 +31,7 @@ public class AuthAdmin implements ActionListener {
                 && UserLists.getAdmins().get(i).getPassword().equals(login.getJpPassword().getText())){
                 login.getWindowFrame().setVisible(false);
                 
-                //Open agenda (tela principal)
+                //Open tela principal do admin
                 return;
             }
         }

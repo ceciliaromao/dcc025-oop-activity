@@ -33,6 +33,7 @@ public class ListPacients implements ListSelectionListener{
             screenView.getJtName().setText(oPaciente.getName());
             screenView.getJtPhoneNumber().setText(oPaciente.getPhoneNumber());
             screenView.getJtEmail().setText(oPaciente.getEmail());
+            screenView.getJtPassword().setText(oPaciente.getPassword());
             
             screenView.setLastIndex(index);
             

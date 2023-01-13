@@ -28,7 +28,7 @@ public class AdminMainScreenView extends JFrame{
         this.admin = admin;
     }
     
-    private void display(){
+    public void display(){
         this.add(this.screenPanel);
         this.setVisible(true);
     }

@@ -39,6 +39,7 @@ public class PacientRegistrationScreenView extends JFrame {
     private JTextField jtEmail;
     private JPasswordField jPasswordField;
     private JTextField jtCPF; 
+    private int lastIndex;
     
     public PacientRegistrationScreenView(){
         super("Registro de Pacientes");
@@ -92,6 +93,13 @@ public class PacientRegistrationScreenView extends JFrame {
         this.jtCPF = jtCPF;
     }
 
+    public int getLastIndex() {
+        return lastIndex;
+    }
+
+    public void setLastIndex(int lastIndex) {
+        this.lastIndex = lastIndex;
+    }
     
     private void createMenu(){
         JPanel menuPanel = new JPanel();

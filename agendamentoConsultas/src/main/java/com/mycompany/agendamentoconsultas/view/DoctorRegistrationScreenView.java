@@ -38,6 +38,7 @@ public class DoctorRegistrationScreenView extends JFrame{
     private JTextField jtEmail;
     private JPasswordField jPasswordField;
     private JTextField jtCrm; 
+    private int lastIndex;
     
     public DoctorRegistrationScreenView(){
         super("Cadastro de Médicos");
@@ -97,6 +98,14 @@ public class DoctorRegistrationScreenView extends JFrame{
 
     public void setJtCrm(JTextField jtCrm) {
         this.jtCrm = jtCrm;
+    }
+    
+    public int getLastIndex() {
+        return lastIndex;
+    }
+
+    public void setLastIndex(int lastIndex) {
+        this.lastIndex = lastIndex;
     }
 
     

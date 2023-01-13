@@ -37,16 +37,17 @@ public class AdminRegistrationScreenView extends JFrame{
     private JTextField jtEmail;
     private JPasswordField jPasswordField;
     private JTextField jtRegistration; 
+    private int lastIndex;
     
     public AdminRegistrationScreenView(){
         super("Cadastro de Administradores");
     }
 
-    public JList<Admin> getPacientList() {
+    public JList<Admin> getAdminList() {
         return adminList;
     }
 
-    public void setPacientList(JList<Admin> admList) {
+    public void setAdminList(JList<Admin> admList) {
         this.adminList = admList;
     }
     
@@ -88,6 +89,14 @@ public class AdminRegistrationScreenView extends JFrame{
 
     public void setJtRegistration(JTextField jtreg) {
         this.jtRegistration = jtreg;
+    }
+    
+    public int getLastIndex() {
+        return lastIndex;
+    }
+
+    public void setLastIndex(int lastIndex) {
+        this.lastIndex = lastIndex;
     }
 
     

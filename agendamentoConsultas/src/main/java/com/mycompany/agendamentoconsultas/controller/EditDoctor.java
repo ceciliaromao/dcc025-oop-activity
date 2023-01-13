@@ -4,9 +4,13 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
+import com.mycompany.agendamentoconsultas.model.Doctor;
+import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
 import com.mycompany.agendamentoconsultas.view.DoctorRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +25,21 @@ public class EditDoctor implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //TODO
+        DefaultListModel<Doctor> model = (DefaultListModel<Doctor>) screenView.getDoctorList().getModel();
+        Doctor docOnEdit = model.getElementAt(screenView.getLastIndex());
+        
+         try {
+            docOnEdit.setCrm(screenView.getJtCrm().getText());
+            docOnEdit.setSpecialty(screenView.getJtSpecialty().getText());
+            docOnEdit.setName(screenView.getJtName().getText());
+            docOnEdit.setPhoneNumber(screenView.getJtPhoneNumber().getText());
+            docOnEdit.setEmail(screenView.getJtEmail().getText());
+            
+            JOptionPane.showMessageDialog(screenView, "Sucesso ao atualizar Médico!");
+        } catch (UserRegistrationException ex) {
+            JOptionPane.showMessageDialog(screenView, ex.getMessage(), ex.getMessage(), JOptionPane.ERROR_MESSAGE);
+        }
+
+        screenView.repaint();
     }
 }

@@ -32,6 +32,7 @@ public class ListAdmins implements ListSelectionListener {
             screenView.getJtName().setText(oAdm.getName());
             screenView.getJtPhoneNumber().setText(oAdm.getPhoneNumber());
             screenView.getJtEmail().setText(oAdm.getEmail());
+            screenView.getJPasswordField().setText(oAdm.getPassword());
             
             screenView.setLastIndex(index);
             

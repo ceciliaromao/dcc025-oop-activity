@@ -6,6 +6,7 @@ package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.view.AdminLoginScreenView;
 import com.mycompany.agendamentoconsultas.model.UserLists;
+import com.mycompany.agendamentoconsultas.view.AdminMainScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -30,8 +31,8 @@ public class AuthAdmin implements ActionListener {
             if(UserLists.getAdmins().get(i).getRegistration().equals(login.getJtRegistration().getText()) 
                 && UserLists.getAdmins().get(i).getPassword().equals(login.getJpPassword().toString())){
                 login.getWindowFrame().setVisible(false);
-                
-                //Open tela principal do admin
+                AdminMainScreenView adminView = new AdminMainScreenView(UserLists.getAdmins().get(i));
+                adminView.buildScreen();
                 return;
             }
         }

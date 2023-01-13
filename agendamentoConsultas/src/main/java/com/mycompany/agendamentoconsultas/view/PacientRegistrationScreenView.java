@@ -9,6 +9,7 @@ import com.mycompany.agendamentoconsultas.controller.DeletePacient;
 import com.mycompany.agendamentoconsultas.controller.EditPacient;
 import com.mycompany.agendamentoconsultas.controller.ListPacients;
 import com.mycompany.agendamentoconsultas.controller.ResetPacientForm;
+import com.mycompany.agendamentoconsultas.controller.UpdatePacient;
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -42,7 +43,8 @@ public class PacientRegistrationScreenView extends JFrame {
     private int lastIndex;
     
     public PacientRegistrationScreenView(){
-        super("Registro de Pacientes");
+        super("Cadastro de Pacientes");
+        this.addWindowListener(new UpdatePacient(this));
     }
 
     public JList<Pacient> getPacientList() {
@@ -104,7 +106,7 @@ public class PacientRegistrationScreenView extends JFrame {
     private void createMenu(){
         JPanel menuPanel = new JPanel();
         menuPanel.setBorder(BorderFactory.createTitledBorder("Pacientes:"));
-        menuPanel.setPreferredSize(new Dimension(120, 200));
+        menuPanel.setPreferredSize(new Dimension(200, 350));
         
         DefaultListModel<Pacient> model = new DefaultListModel<>();
         
@@ -115,7 +117,7 @@ public class PacientRegistrationScreenView extends JFrame {
         
         pacientList.addListSelectionListener(new ListPacients(this));
         
-        menuPanel.add(new JScrollPane(pacientPanel), BorderLayout.EAST);
+        pacientPanel.add(new JScrollPane(menuPanel), BorderLayout.EAST);
         
         this.pacientPanel.add(menuPanel, BorderLayout.WEST);
     }

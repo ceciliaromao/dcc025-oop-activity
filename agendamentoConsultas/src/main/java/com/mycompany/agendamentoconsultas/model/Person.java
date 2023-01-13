@@ -50,7 +50,7 @@ public abstract class Person {
             }
         }
          
-        this.phoneNumber = "(" + phoneNumber.substring(0, 2) + ")" + phoneNumber.substring(2);
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {

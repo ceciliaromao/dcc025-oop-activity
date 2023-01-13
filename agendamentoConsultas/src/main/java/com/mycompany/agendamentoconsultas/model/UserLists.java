@@ -15,13 +15,13 @@ public class UserLists {
     private static List<Doctor> doctors;
     private static List<Admin> admins;
     private static List<Pacient> pacients;
-    private static List<Agenda> horarios;
+    private static List<Agenda> horariosAgenda;
     
     static {
         doctors = new ArrayList<>();
         admins = new ArrayList<>();
         pacients = new ArrayList<>();
-        horarios = new ArrayList<>();
+        horariosAgenda = new ArrayList<>();
     }
     
     public static List<Pacient> getPacients() {
@@ -37,7 +37,7 @@ public class UserLists {
     }
 
     public static List<Agenda> getHorarios() {
-        return horarios;
+        return horariosAgenda;
     }
     
     public static void setDoctors(List<Doctor> doctors) {
@@ -53,7 +53,7 @@ public class UserLists {
     }
 
     public static void setHorarios(List<Agenda> horarios) {
-        UserLists.horarios = horarios;
+        UserLists.horariosAgenda = horarios;
     }
     
     

@@ -7,6 +7,7 @@ package com.mycompany.agendamentoconsultas.utils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mycompany.agendamentoconsultas.model.Admin;
+import com.mycompany.agendamentoconsultas.model.Agenda;
 import com.mycompany.agendamentoconsultas.model.Doctor;
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import java.lang.reflect.Type;
@@ -32,6 +33,10 @@ public class JSONUtils {
         Gson gson = new Gson();
         return gson.toJson(adm);
     }
+        public static String toJSON(Agenda agenda){
+        Gson gson = new Gson();
+        return gson.toJson(agenda);
+    }
     
     public static String pToJSON(List<Pacient> pacients){
         Gson gson = new Gson();
@@ -44,6 +49,10 @@ public class JSONUtils {
     public static String aToJSON(List<Admin> admins){
         Gson gson = new Gson();
         return gson.toJson(admins);
+    }
+    public static String agToJSON(List<Agenda> horariosAgenda){
+        Gson gson = new Gson();
+        return gson.toJson(horariosAgenda);
     }
     
     public static Pacient toPacient(String json){
@@ -59,6 +68,11 @@ public class JSONUtils {
         Gson gson = new Gson();
         Admin adm = gson.fromJson(json, Admin.class);
         return adm;
+    }
+    public static Agenda toAgenda(String json){
+        Gson gson = new Gson();
+        Agenda agenda = gson.fromJson(json, Agenda.class);
+        return agenda;
     }
     
     public static List<Pacient> toPacients(String json){
@@ -78,5 +92,11 @@ public class JSONUtils {
         Type userType = new TypeToken<ArrayList<Admin>>(){}.getType();
         List<Admin> admins = gson.fromJson(json, userType);
         return admins;
+    }
+    public static List<Agenda> toHorariosAgenda(String json){
+        Gson gson = new Gson();
+        Type userType = new TypeToken<ArrayList<Agenda>>(){}.getType();
+        List<Agenda> horariosAgenda = gson.fromJson(json, userType);
+        return horariosAgenda;
     }
 }

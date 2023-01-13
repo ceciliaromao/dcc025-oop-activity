@@ -5,7 +5,6 @@
 package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.model.Agenda;
-import com.mycompany.agendamentoconsultas.model.Doctor;
 import com.mycompany.agendamentoconsultas.utils.FileUtils;
 import com.mycompany.agendamentoconsultas.utils.JSONUtils;
 import com.mycompany.agendamentoconsultas.view.AgendaDoctorScreenView;
@@ -24,7 +23,7 @@ import javax.swing.ListModel;
  * @author Fernando
  */
 public class UpdateAgendaDoctor  implements WindowListener {
-    private static final String PATH = "doctors.json";
+    private static final String PATH = "agenda.json";
     private final AgendaDoctorScreenView screenView;
     
     public UpdateAgendaDoctor(AgendaDoctorScreenView screenView) {
@@ -39,8 +38,8 @@ public class UpdateAgendaDoctor  implements WindowListener {
             
             DefaultListModel<Agenda> model = new DefaultListModel<>();
             
-            for (Agenda horario : horariosAgenda) {
-                model.addElement(horario);
+            for (Agenda agenda : horariosAgenda) {
+                model.addElement(agenda);
             }
             
             screenView.getAgendaList().setModel(model);

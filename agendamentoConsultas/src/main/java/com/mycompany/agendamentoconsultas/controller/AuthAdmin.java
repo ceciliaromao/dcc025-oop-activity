@@ -29,7 +29,7 @@ public class AuthAdmin implements ActionListener {
         
         for(int i=0; i<UserLists.getAdmins().size(); i++){
             if(UserLists.getAdmins().get(i).getRegistration().equals(login.getJtRegistration().getText()) 
-                && UserLists.getAdmins().get(i).getPassword().equals(login.getJpPassword().getText())){
+                && UserLists.getAdmins().get(i).getPassword().equals(login.getJpPassword().toString())){
                 login.getWindowFrame().setVisible(false);
                 AdminMainScreenView adminView = new AdminMainScreenView(UserLists.getAdmins().get(i));
                 adminView.buildScreen();

@@ -23,7 +23,7 @@ import javax.swing.ListModel;
  * @author Fernando
  */
 public class UpdateAgendaPacient implements WindowListener {
-    private static final String PATH = "doctors.json";
+    private static final String PATH = "agenda.json";
     private final AgendaPacientScreenView screenView;
     
     public UpdateAgendaPacient(AgendaPacientScreenView screenView) {
@@ -38,8 +38,8 @@ public class UpdateAgendaPacient implements WindowListener {
             
             DefaultListModel<Agenda> model = new DefaultListModel<>();
             
-            for (Agenda horario : horariosAgenda) {
-                model.addElement(horario);
+            for (Agenda agenda : horariosAgenda) {
+                model.addElement(agenda);
             }
             
             screenView.getAgendaList().setModel(model);

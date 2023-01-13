@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView</exec.mainClass>
+        <exec.mainClass>com.mycompany.agendamentoconsultas.view.ScreenView</exec.mainClass>
     </properties>
     <build>
         <plugins>
@@ -18,7 +18,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView</mainClass>
+                            <mainClass>com.mycompany.agendamentoconsultas.view.ScreenView</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -42,6 +42,11 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+            <version>5.3</version>
         </dependency>
     </dependencies>
 </project>

@@ -8,6 +8,7 @@ import com.mycompany.agendamentoconsultas.controller.CreateDoctor;
 import com.mycompany.agendamentoconsultas.controller.DeleteDoctor;
 import com.mycompany.agendamentoconsultas.controller.EditDoctor;
 import com.mycompany.agendamentoconsultas.controller.ListDoctors;
+import com.mycompany.agendamentoconsultas.controller.UpdateDoctor;
 import com.mycompany.agendamentoconsultas.model.Doctor;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -35,12 +36,13 @@ public class DoctorRegistrationScreenView extends JFrame{
     private JTextField jtSpecialty;
     private JTextField jtPhoneNumber;
     private JTextField jtEmail;
-    private JPasswordField jPasswordField;
+    private JTextField jtPassword;
     private JTextField jtCrm; 
     private int lastIndex;
     
     public DoctorRegistrationScreenView(){
         super("Cadastro de Médicos");
+        this.addWindowListener(new UpdateDoctor(this));
     }
 
     public JList<Doctor> getDoctorList() {
@@ -83,12 +85,12 @@ public class DoctorRegistrationScreenView extends JFrame{
         this.jtEmail = jtEmail;
     }
 
-    public JPasswordField getJPasswordField() {
-        return jPasswordField;
+    public JTextField getJtPassword() {
+        return jtPassword;
     }
 
-    public void setJPasswordField(JPasswordField jPasswordField) {
-        this.jPasswordField = jPasswordField;
+    public void setJtPassword(JTextField jtPassword) {
+        this.jtPassword = jtPassword;
     }
 
     public JTextField getJtCrm() {
@@ -156,14 +158,14 @@ public class DoctorRegistrationScreenView extends JFrame{
         panelTextField.add(jtCrm);
         
         JLabel jlSpecialty = new JLabel("Especialidade: ");
-        jtSpecialty = new JPasswordField(20);
+        jtSpecialty = new JTextField(20);
         panelLabel.add(jlSpecialty);
         panelTextField.add(jtSpecialty);
         
         JLabel jlPassword = new JLabel("Senha: ");
-        jPasswordField = new JPasswordField(20);
+        jtPassword = new JPasswordField(20);
         panelLabel.add(jlPassword);
-        panelTextField.add(jPasswordField);
+        panelTextField.add(jtPassword);
         
         formPanel.add(panelLabel, BorderLayout.WEST);
         formPanel.add(panelTextField, BorderLayout.EAST);
@@ -192,7 +194,7 @@ public class DoctorRegistrationScreenView extends JFrame{
     }
     
     public void display(){
-        this.setSize(300, 200);
+        this.setSize(500, 200);
         this.setVisible(true);
         
         this.DoctorPanel = new JPanel();

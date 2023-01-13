@@ -181,7 +181,7 @@ public class PacientRegistrationScreenView extends JFrame {
     }
     
     public void display(){
-        this.setSize(300, 200);
+        this.setSize(450, 200);
         this.setVisible(true);
         
         this.pacientPanel = new JPanel();

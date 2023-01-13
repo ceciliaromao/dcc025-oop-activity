@@ -8,6 +8,7 @@ import com.mycompany.agendamentoconsultas.controller.CreateAdmin;
 import com.mycompany.agendamentoconsultas.controller.DeleteAdmin;
 import com.mycompany.agendamentoconsultas.controller.EditAdmin;
 import com.mycompany.agendamentoconsultas.controller.ListAdmins;
+import com.mycompany.agendamentoconsultas.controller.UpdateAdmin;
 import com.mycompany.agendamentoconsultas.model.Admin;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -34,12 +35,13 @@ public class AdminRegistrationScreenView extends JFrame{
     private JTextField jtName;
     private JTextField jtPhoneNumber;
     private JTextField jtEmail;
-    private JPasswordField jPasswordField;
+    private JTextField jtPassword;
     private JTextField jtRegistration; 
     private int lastIndex;
     
     public AdminRegistrationScreenView(){
         super("Cadastro de Administradores");
+        this.addWindowListener(new UpdateAdmin(this));
     }
 
     public JList<Admin> getAdminList() {
@@ -74,12 +76,12 @@ public class AdminRegistrationScreenView extends JFrame{
         this.jtEmail = jtEmail;
     }
 
-    public JPasswordField getJPasswordField() {
-        return jPasswordField;
+    public JTextField getJtPassword() {
+        return jtPassword;
     }
 
-    public void setJPasswordField(JPasswordField jPasswordField) {
-        this.jPasswordField = jPasswordField;
+    public void setJtPassword(JTextField jtPassword) {
+        this.jtPassword = jtPassword;
     }
 
     public JTextField getJtRegistration() {
@@ -147,9 +149,9 @@ public class AdminRegistrationScreenView extends JFrame{
         panelTextField.add(jtRegistration);
         
         JLabel jlPassword = new JLabel("Senha: ");
-        jPasswordField = new JPasswordField(20);
+        jtPassword = new JPasswordField(20);
         panelLabel.add(jlPassword);
-        panelTextField.add(jPasswordField);
+        panelTextField.add(jtPassword);
         
         formPanel.add(panelLabel, BorderLayout.WEST);
         formPanel.add(panelTextField, BorderLayout.EAST);
@@ -178,7 +180,7 @@ public class AdminRegistrationScreenView extends JFrame{
     }
     
     public void display(){
-        this.setSize(300, 200);
+        this.setSize(500, 200);
         this.setVisible(true);
         
         this.adminPanel = new JPanel();

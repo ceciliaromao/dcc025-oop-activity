@@ -1,9 +1,1 @@
-[
-  {
-    "registration": "admin",
-    "name": "admin teste",
-    "phoneNumber": "32999999999",
-    "email": "test@email.com",
-    "password": "123456"
-  }
-]
+[{"registration":"admin","name":"admin teste","phoneNumber":"99999999999","email":"admin@admin.com","password":"123456","active":true}]

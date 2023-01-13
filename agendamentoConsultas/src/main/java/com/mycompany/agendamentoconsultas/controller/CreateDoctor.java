@@ -35,7 +35,7 @@ public class CreateDoctor implements ActionListener {
                     screenView.getJtName().getText(),
                     screenView.getJtPhoneNumber().getText(),
                     screenView.getJtEmail().getText(),
-                    screenView.getJPasswordField().getPassword().toString()));
+                    screenView.getJtPassword().getText()));
         } catch (UserRegistrationException ex) {
             JOptionPane.showMessageDialog(screenView, ex.getMessage(), ex.getMessage(), JOptionPane.ERROR_MESSAGE);
         }

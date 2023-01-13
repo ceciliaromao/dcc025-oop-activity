@@ -8,6 +8,7 @@ import com.mycompany.agendamentoconsultas.model.Admin;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,7 +34,7 @@ public class AdminMainScreenView extends JFrame{
     }
     
     public void createWindow(){
-        this.setSize(320, 140);
+        this.setSize(320, 170);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.screenPanel = new JPanel();
@@ -48,18 +49,42 @@ public class AdminMainScreenView extends JFrame{
         jpButtons.setPreferredSize(new Dimension(300, 180));
         
         JButton btnPacient = new JButton("Registro de Pacientes");
-        //btnPacient.addActionListener(new PacientRegistrationScreenView(this));
+        btnPacient.addActionListener((ActionEvent e) -> {
+            goToPacientRegistration();
+        });
         jpButtons.add(btnPacient);
         
         JButton btnDoctor = new JButton("Registro de Médicos");
-        //btnDoctor.addActionListener(new DoctorRegistrationScreenView(this));
+        btnDoctor.addActionListener((ActionEvent e) -> {
+            goToDoctorRegistration();
+        });
         jpButtons.add(btnDoctor);
         
         JButton btnAdmin = new JButton("Registro de Administradores");
-        //btnAdmin.addActionListener(new AdminRegistrationScreenView(this));
+        btnAdmin.addActionListener((ActionEvent e) -> {
+            goToAdminRegistration();
+        });
         jpButtons.add(btnAdmin);
         
         this.screenPanel.add(jpButtons, BorderLayout.WEST);
+    }
+    
+    private void goToPacientRegistration(){
+        this.setVisible(false);
+        PacientRegistrationScreenView newView = new PacientRegistrationScreenView();
+        newView.display();
+    }
+    
+    private void goToDoctorRegistration(){
+        this.setVisible(false);
+        DoctorRegistrationScreenView newView = new DoctorRegistrationScreenView();
+        newView.display();
+    }
+    
+    private void goToAdminRegistration(){
+        this.setVisible(false);
+        AdminRegistrationScreenView newView = new AdminRegistrationScreenView();
+        newView.display();
     }
     
     public void buildScreen(){

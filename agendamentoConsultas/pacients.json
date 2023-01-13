@@ -1,9 +1,16 @@
 [
   {
-    "cpf": "09861452702",
-    "name": "Maria Cecilia",
-    "phoneNumber": "(32)985091907",
-    "email": "cecilia@email.com",
+    "cpf": "11111111111",
+    "name": "pacient teste",
+    "phoneNumber": "(32)999999999",
+    "email": "test@email.com",
+    "password": "123456"
+  },
+  {
+    "cpf": "22222222222",
+    "name": "pacient teste2",
+    "phoneNumber": "(32)999999999",
+    "email": "test2@email.com",
     "password": "123456"
   }
 ]

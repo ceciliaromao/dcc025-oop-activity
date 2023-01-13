@@ -42,7 +42,7 @@ public class PacientRegistrationScreenView extends JFrame {
     private int lastIndex;
     
     public PacientRegistrationScreenView(){
-        super("Registro de Pacientes");
+        super("Cadastro de Pacientes");
     }
 
     public JList<Pacient> getPacientList() {
@@ -193,5 +193,12 @@ public class PacientRegistrationScreenView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         this.repaint();
+    }
+    
+    public static void main(String[] args) {
+        PacientRegistrationScreenView tela = new PacientRegistrationScreenView();
+        
+        tela.display();
+        tela.pack();
     }
 }

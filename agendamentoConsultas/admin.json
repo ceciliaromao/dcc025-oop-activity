@@ -1,3 +1,9 @@
 [
-    
+  {
+    "registration": "33333",
+    "name": "admin teste",
+    "phoneNumber": "(32)999999999",
+    "email": "test@email.com",
+    "password": "123456"
+  }
 ]

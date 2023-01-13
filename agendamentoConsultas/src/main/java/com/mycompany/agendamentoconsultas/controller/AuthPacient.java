@@ -29,7 +29,7 @@ public class AuthPacient implements ActionListener {
         
         for(int i=0; i<UserLists.getPacients().size(); i++){
             if(UserLists.getPacients().get(i).getCpf().equals(login.getJtCPF().getText()) 
-                && UserLists.getPacients().get(i).getPassword().equals(login.getJpPassword().getText())){
+                && UserLists.getPacients().get(i).getPassword().equals(login.getJpPassword().toString())){
                 login.getWindowFrame().setVisible(false);
                 PacientMainScreenView pacientView = new PacientMainScreenView(UserLists.getPacients().get(i));
                 pacientView.buildScreen();

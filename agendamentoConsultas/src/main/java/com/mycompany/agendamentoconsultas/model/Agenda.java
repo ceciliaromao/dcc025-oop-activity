@@ -19,8 +19,9 @@ public class Agenda {
     private boolean active;
     
     
-    public Agenda(Date datetime, String doctorName, String doctorSpecialty) {
+    public Agenda(Date datetime,String pacientName, String doctorName, String doctorSpecialty) {
         this.datetime = datetime;
+        this.pacientName = pacientName;
         this.doctorName = doctorName;
         this.doctorSpecialty = doctorSpecialty;
         this.active = true;

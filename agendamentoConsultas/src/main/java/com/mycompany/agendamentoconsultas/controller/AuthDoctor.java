@@ -28,7 +28,7 @@ public class AuthDoctor implements ActionListener {
         
         for(int i=0; i<UserLists.getDoctors().size(); i++){
             if(UserLists.getDoctors().get(i).getCrm().equals(login.getJtCRM().getText()) 
-                && UserLists.getDoctors().get(i).getPassword().equals(login.getJpPassword().getText())){
+                && UserLists.getDoctors().get(i).getPassword().equals(login.getJpPassword().toString())){
                 login.getWindowFrame().setVisible(false);
                 
                 //Open agenda médico

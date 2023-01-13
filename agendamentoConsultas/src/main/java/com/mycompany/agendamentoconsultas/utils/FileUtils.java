@@ -63,7 +63,7 @@ public class FileUtils implements WindowListener{
 
             UserLists.setPacients(JSONUtils.toPacients(pacientFile)); 
             UserLists.setDoctors(JSONUtils.toDoctors(doctorFile));
-            UserLists.setAdmin(JSONUtils.toAdmins(adminFile));
+            UserLists.setAdmins(JSONUtils.toAdmins(adminFile));
 
             this.screenview.repaint();
 

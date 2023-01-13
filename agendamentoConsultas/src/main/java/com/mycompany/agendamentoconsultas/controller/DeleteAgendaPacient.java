@@ -5,7 +5,7 @@
 package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.model.Agenda;
-import com.mycompany.agendamentoconsultas.view.AgendaDoctorScreenView;
+import com.mycompany.agendamentoconsultas.view.AgendaPacientScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
@@ -15,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author Fernando
  */
-public class DeleteAgendaDoctor implements ActionListener{
-    private AgendaDoctorScreenView screenView;
+public class DeleteAgendaPacient implements ActionListener{
+    private AgendaPacientScreenView screenView;
     
     
-    public DeleteAgendaDoctor(AgendaDoctorScreenView ScreenView){
-        this.screenView = ScreenView;
+    public DeleteAgendaPacient(AgendaPacientScreenView AgendaScreenView){
+        this.screenView = AgendaScreenView;
     }
     
        @Override

@@ -5,7 +5,7 @@
 package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.model.Agenda;
-import com.mycompany.agendamentoconsultas.view.AgendaDoctorScreenView;
+import com.mycompany.agendamentoconsultas.view.AgendaPacientScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.DateTimeException;
@@ -15,11 +15,11 @@ import javax.swing.DefaultListModel;
  *
  * @author Fernando
  */
-public class CreateAgendaDoctor implements ActionListener {
+public class CreateAgendaPacient implements ActionListener {
 
-    private AgendaDoctorScreenView screenView;
+    private AgendaPacientScreenView screenView;
 
-    public CreateAgendaDoctor(AgendaDoctorScreenView screenView) {
+    public CreateAgendaPacient(AgendaPacientScreenView screenView) {
         this.screenView = screenView;
     }
 

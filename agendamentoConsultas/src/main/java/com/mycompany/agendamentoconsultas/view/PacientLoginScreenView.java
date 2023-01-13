@@ -27,7 +27,7 @@ public class PacientLoginScreenView implements ActionListener {
     private JFrame windowFrame;
     private JPanel mainPanel;
     private JTextField jtCPF;
-    private JPasswordField jpPassword;
+    private JPasswordField jPassword;
 
     public PacientLoginScreenView(ScreenView screenView) {
         this.screenView = screenView;
@@ -44,8 +44,8 @@ public class PacientLoginScreenView implements ActionListener {
         return jtCPF;
     }
 
-    public JPasswordField getJpPassword() {
-        return jpPassword;
+    public JPasswordField getJPassword() {
+        return jPassword;
     }
 
     public JFrame getWindowFrame() {
@@ -84,8 +84,8 @@ public class PacientLoginScreenView implements ActionListener {
         jpLogin.add(this.jtCPF);
         
         jpLogin.add(new JLabel("Senha:"));
-        this.jpPassword = new JPasswordField(size);
-        jpLogin.add(this.jpPassword);
+        this.jPassword = new JPasswordField(size);
+        jpLogin.add(this.jPassword);
         
         JButton btnEntrar = new JButton("Entrar");
         btnEntrar.addActionListener(new AuthPacient(this));

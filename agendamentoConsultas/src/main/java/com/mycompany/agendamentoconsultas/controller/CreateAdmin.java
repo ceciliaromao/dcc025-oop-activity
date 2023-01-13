@@ -36,7 +36,7 @@ public class CreateAdmin implements ActionListener {
                     screenView.getJtEmail().getText(),
                     screenView.getJPasswordField().getPassword().toString()));
         } catch (UserRegistrationException ex) {
-            System.out.println("Algo deu errado ao criar o Administrador: " + ex.getMessage());
+            JOptionPane.showMessageDialog(screenView, ex.getMessage(), ex.getMessage(), JOptionPane.ERROR_MESSAGE);
         }
         screenView.getAdminList().setModel(model);
         screenView.repaint();

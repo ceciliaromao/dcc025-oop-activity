@@ -10,6 +10,7 @@ import com.mycompany.agendamentoconsultas.view.DoctorRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,7 +37,7 @@ public class CreateDoctor implements ActionListener {
                     screenView.getJtEmail().getText(),
                     screenView.getJPasswordField().getPassword().toString()));
         } catch (UserRegistrationException ex) {
-            System.out.println("Algo deu errado ao criar o Médico: " + ex.getMessage());
+            JOptionPane.showMessageDialog(screenView, ex.getMessage(), ex.getMessage(), JOptionPane.ERROR_MESSAGE);
         }
         screenView.getDoctorList().setModel(model);
         screenView.repaint();

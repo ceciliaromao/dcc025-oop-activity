@@ -32,12 +32,13 @@ public class EditPacient implements ActionListener {
         Pacient pacOnEdit = model.getElementAt(screenView.getLastIndex());
         
          try {
-            pacOnEdit.setCpf(screenView.getJtCPF().getText());
             pacOnEdit.setName(screenView.getJtName().getText());
+            pacOnEdit.setCpf(screenView.getJtCPF().getText());
             pacOnEdit.setPhoneNumber(screenView.getJtPhoneNumber().getText());
             pacOnEdit.setEmail(screenView.getJtEmail().getText());
+            pacOnEdit.setPassword(screenView.getJtPassword().getText());
             
-            JOptionPane.showMessageDialog(screenView, "Sucesso ao atualizar Paciente!");
+            JOptionPane.showMessageDialog(screenView, "Sucesso ao atualizar paciente " + screenView.getJtName().getText());
         } catch (UserRegistrationException ex) {
             JOptionPane.showMessageDialog(screenView, ex.getMessage(), ex.getMessage(), JOptionPane.ERROR_MESSAGE);
         }

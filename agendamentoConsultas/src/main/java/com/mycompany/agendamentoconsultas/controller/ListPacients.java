@@ -29,8 +29,8 @@ public class ListPacients implements ListSelectionListener{
         if(index != -1){
             Pacient oPaciente = screenView.getPacientList().getModel().getElementAt(index);
             
-            screenView.getJtCPF().setText(oPaciente.getCpf());
             screenView.getJtName().setText(oPaciente.getName());
+            screenView.getJtCPF().setText(oPaciente.getCpf());
             screenView.getJtPhoneNumber().setText(oPaciente.getPhoneNumber());
             screenView.getJtEmail().setText(oPaciente.getEmail());
             screenView.getJtPassword().setText(oPaciente.getPassword());

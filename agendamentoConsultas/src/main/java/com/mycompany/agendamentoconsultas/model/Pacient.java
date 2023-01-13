@@ -33,5 +33,10 @@ public class Pacient extends Person {
         }
         
         this.cpf = cpf;
-    }  
+    }
+    
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }

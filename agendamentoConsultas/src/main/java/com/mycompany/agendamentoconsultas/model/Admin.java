@@ -26,4 +26,9 @@ public class Admin extends Person {
     public void setRegistration(String registration) {
         this.registration = registration;
     }
+    
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }

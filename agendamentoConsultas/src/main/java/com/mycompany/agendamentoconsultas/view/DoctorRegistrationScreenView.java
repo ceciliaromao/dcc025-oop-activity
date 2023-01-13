@@ -8,7 +8,6 @@ import com.mycompany.agendamentoconsultas.controller.CreateDoctor;
 import com.mycompany.agendamentoconsultas.controller.DeleteDoctor;
 import com.mycompany.agendamentoconsultas.controller.EditDoctor;
 import com.mycompany.agendamentoconsultas.controller.ListDoctors;
-import com.mycompany.agendamentoconsultas.controller.ResetDoctorForm;
 import com.mycompany.agendamentoconsultas.model.Doctor;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -123,7 +122,7 @@ public class DoctorRegistrationScreenView extends JFrame{
         
         DoctorList.addListSelectionListener(new ListDoctors(this));
         
-        DoctorPanel.add(new JScrollPane(menuPanel), BorderLayout.EAST);
+        menuPanel.add(new JScrollPane(DoctorList), BorderLayout.EAST);
         
         this.DoctorPanel.add(menuPanel, BorderLayout.WEST);
     }
@@ -182,10 +181,10 @@ public class DoctorRegistrationScreenView extends JFrame{
         JButton btnUpdate = new JButton("Atualiza");
         btnUpdate.addActionListener(new EditDoctor(this));
         painelBotoes.add(btnUpdate);
-        
-        JButton btnReset = new JButton("Limpa");
-        btnReset.addActionListener(new ResetDoctorForm(this));
-        painelBotoes.add(btnReset);
+                
+        JButton btnBack = new JButton("Voltar");
+        //btnBack.addActionListener(???);
+        painelBotoes.add(btnBack);
         
         formPanel.add(painelBotoes, BorderLayout.SOUTH);
         

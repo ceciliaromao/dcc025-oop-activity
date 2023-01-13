@@ -8,7 +8,6 @@ import com.mycompany.agendamentoconsultas.controller.CreatePacient;
 import com.mycompany.agendamentoconsultas.controller.DeletePacient;
 import com.mycompany.agendamentoconsultas.controller.EditPacient;
 import com.mycompany.agendamentoconsultas.controller.ListPacients;
-import com.mycompany.agendamentoconsultas.controller.ResetPacientForm;
 import com.mycompany.agendamentoconsultas.controller.UpdatePacient;
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import java.awt.BorderLayout;
@@ -38,7 +37,7 @@ public class PacientRegistrationScreenView extends JFrame {
     private JTextField jtName;
     private JTextField jtPhoneNumber;
     private JTextField jtEmail;
-    private JPasswordField jPasswordField;
+    private JTextField jtPassword;
     private JTextField jtCPF; 
     private int lastIndex;
     
@@ -79,12 +78,12 @@ public class PacientRegistrationScreenView extends JFrame {
         this.jtEmail = jtEmail;
     }
 
-    public JPasswordField getJPasswordField() {
-        return jPasswordField;
+    public JTextField getJtPassword() {
+        return jtPassword;
     }
 
-    public void setJPasswordField(JPasswordField jPasswordField) {
-        this.jPasswordField = jPasswordField;
+    public void setJtPassword(JTextField jPasswordField) {
+        this.jtPassword = jPasswordField;
     }
 
     public JTextField getJtCPF() {
@@ -106,7 +105,7 @@ public class PacientRegistrationScreenView extends JFrame {
     private void createMenu(){
         JPanel menuPanel = new JPanel();
         menuPanel.setBorder(BorderFactory.createTitledBorder("Pacientes:"));
-        menuPanel.setPreferredSize(new Dimension(200, 350));
+        menuPanel.setPreferredSize(new Dimension(120, 200));
         
         DefaultListModel<Pacient> model = new DefaultListModel<>();
         
@@ -117,7 +116,7 @@ public class PacientRegistrationScreenView extends JFrame {
         
         pacientList.addListSelectionListener(new ListPacients(this));
         
-        pacientPanel.add(new JScrollPane(menuPanel), BorderLayout.EAST);
+        menuPanel.add(new JScrollPane(pacientList), BorderLayout.EAST);
         
         this.pacientPanel.add(menuPanel, BorderLayout.WEST);
     }
@@ -151,9 +150,9 @@ public class PacientRegistrationScreenView extends JFrame {
         panelTextField.add(jtCPF);
         
         JLabel jlPassword = new JLabel("Senha: ");
-        jPasswordField = new JPasswordField(20);
+        jtPassword = new JPasswordField(20);
         panelLabel.add(jlPassword);
-        panelTextField.add(jPasswordField);
+        panelTextField.add(jtPassword);
         
         formPanel.add(panelLabel, BorderLayout.WEST);
         formPanel.add(panelTextField, BorderLayout.EAST);
@@ -172,10 +171,10 @@ public class PacientRegistrationScreenView extends JFrame {
         btnUpdate.addActionListener(new EditPacient(this));
         painelBotoes.add(btnUpdate);
         
-        JButton btnReset = new JButton("Limpa");
-        btnReset.addActionListener(new ResetPacientForm(this));
-        painelBotoes.add(btnReset);
-        
+        JButton btnBack = new JButton("Voltar");
+        //btnBack.addActionListener(???);
+        painelBotoes.add(btnBack);
+                
         formPanel.add(painelBotoes, BorderLayout.SOUTH);
         
         this.pacientPanel.add(formPanel, BorderLayout.CENTER);

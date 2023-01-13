@@ -8,7 +8,6 @@ import com.mycompany.agendamentoconsultas.controller.CreateAdmin;
 import com.mycompany.agendamentoconsultas.controller.DeleteAdmin;
 import com.mycompany.agendamentoconsultas.controller.EditAdmin;
 import com.mycompany.agendamentoconsultas.controller.ListAdmins;
-import com.mycompany.agendamentoconsultas.controller.ResetAdminForm;
 import com.mycompany.agendamentoconsultas.model.Admin;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -114,7 +113,7 @@ public class AdminRegistrationScreenView extends JFrame{
         
         adminList.addListSelectionListener(new ListAdmins(this));
         
-        adminPanel.add(new JScrollPane(menuPanel), BorderLayout.EAST);
+        menuPanel.add(new JScrollPane(adminList), BorderLayout.EAST);
         
         this.adminPanel.add(menuPanel, BorderLayout.WEST);
     }
@@ -169,9 +168,9 @@ public class AdminRegistrationScreenView extends JFrame{
         btnUpdate.addActionListener(new EditAdmin(this));
         painelBotoes.add(btnUpdate);
         
-        JButton btnReset = new JButton("Limpa");
-        btnReset.addActionListener(new ResetAdminForm(this));
-        painelBotoes.add(btnReset);
+        JButton btnBack = new JButton("Voltar");
+        //btnBack.addActionListener(???);
+        painelBotoes.add(btnBack);
         
         formPanel.add(painelBotoes, BorderLayout.SOUTH);
         

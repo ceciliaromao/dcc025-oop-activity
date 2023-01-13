@@ -4,13 +4,12 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.model.UserLists;
 import com.mycompany.agendamentoconsultas.model.Doctor;
 import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
 import com.mycompany.agendamentoconsultas.view.DoctorRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -27,10 +26,10 @@ public class CreateDoctor implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        List<Doctor> theDoctorsList = UserLists.getDoctors();
+       DefaultListModel<Doctor> model = (DefaultListModel<Doctor>) screenView.getDoctorList().getModel();
 
         try {
-            theDoctorsList.add(new Doctor(screenView.getJtCrm().getText(),
+            model.addElement(new Doctor(screenView.getJtCrm().getText(),
                     screenView.getJtSpecialty().getText(),
                     screenView.getJtName().getText(),
                     screenView.getJtPhoneNumber().getText(),
@@ -39,6 +38,7 @@ public class CreateDoctor implements ActionListener {
         } catch (UserRegistrationException ex) {
             System.out.println("Algo deu errado ao criar o Médico: " + ex.getMessage());
         }
-
+        screenView.getDoctorList().setModel(model);
+        screenView.repaint();
     }
 }

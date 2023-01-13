@@ -4,6 +4,7 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
+import com.mycompany.agendamentoconsultas.model.Admin;
 import com.mycompany.agendamentoconsultas.view.AdminRegistrationScreenView;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -22,6 +23,18 @@ public class ListAdmins implements ListSelectionListener {
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
-        //TODO
+        int index = screenView.getAdminList().getSelectedIndex();
+        
+        if(index != -1){
+            Admin oAdm = screenView.getAdminList().getModel().getElementAt(index);
+            
+            screenView.getJtRegistration().setText(oAdm.getRegistration());
+            screenView.getJtName().setText(oAdm.getName());
+            screenView.getJtPhoneNumber().setText(oAdm.getPhoneNumber());
+            screenView.getJtEmail().setText(oAdm.getEmail());
+            
+            screenView.setLastIndex(index);
+            
+        }
     }
 }

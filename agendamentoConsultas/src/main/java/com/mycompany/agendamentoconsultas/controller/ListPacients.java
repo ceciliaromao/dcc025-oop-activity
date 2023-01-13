@@ -4,6 +4,7 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
+import com.mycompany.agendamentoconsultas.model.Pacient;
 import com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -23,6 +24,18 @@ public class ListPacients implements ListSelectionListener{
     
     @Override
     public void valueChanged(ListSelectionEvent e) {
-       //TODO
+       int index = screenView.getPacientList().getSelectedIndex();
+        
+        if(index != -1){
+            Pacient oPaciente = screenView.getPacientList().getModel().getElementAt(index);
+            
+            screenView.getJtCPF().setText(oPaciente.getCpf());
+            screenView.getJtName().setText(oPaciente.getName());
+            screenView.getJtPhoneNumber().setText(oPaciente.getPhoneNumber());
+            screenView.getJtEmail().setText(oPaciente.getEmail());
+            
+            screenView.setLastIndex(index);
+            
+        }
     }
 }

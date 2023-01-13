@@ -4,24 +4,38 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
+import com.mycompany.agendamentoconsultas.model.Admin;
 import com.mycompany.agendamentoconsultas.view.AdminRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Fernando
  */
 public class DeleteAdmin implements ActionListener{
-    private AdminRegistrationScreenView ScreenView;
+    private AdminRegistrationScreenView screenView;
     
     
     public DeleteAdmin(AdminRegistrationScreenView AdmScreenView){
-        this.ScreenView = AdmScreenView;
+        this.screenView = AdmScreenView;
     }
     
        @Override
     public void actionPerformed(ActionEvent e) {    
-        //TODO
+        int selectedIndex = screenView.getAdminList().getSelectedIndex();
+
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(screenView, "Selecione um Administrador para excluír.");
+        } else {
+            DefaultListModel<Admin> model = (DefaultListModel<Admin>) screenView.getAdminList().getModel();
+
+            model.removeElementAt(selectedIndex);
+            screenView.getAdminList().setModel(model);
+            screenView.getAdminList().setSelectedIndex(selectedIndex);
+            screenView.repaint();
+        }
     }
 }

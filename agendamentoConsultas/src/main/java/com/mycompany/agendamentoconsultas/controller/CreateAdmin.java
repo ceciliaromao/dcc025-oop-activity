@@ -4,13 +4,13 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.model.UserLists;
 import com.mycompany.agendamentoconsultas.model.Admin;
 import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
 import com.mycompany.agendamentoconsultas.view.AdminRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,10 +27,10 @@ public class CreateAdmin implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        List<Admin> theAdminsList = UserLists.getAdmins();
+        DefaultListModel<Admin> model = (DefaultListModel<Admin>) screenView.getAdminList().getModel();
 
         try {
-            theAdminsList.add(new Admin(screenView.getJtRegistration().getText(),
+            model.addElement(new Admin(screenView.getJtRegistration().getText(),
                     screenView.getJtName().getText(),
                     screenView.getJtPhoneNumber().getText(),
                     screenView.getJtEmail().getText(),
@@ -38,6 +38,7 @@ public class CreateAdmin implements ActionListener {
         } catch (UserRegistrationException ex) {
             System.out.println("Algo deu errado ao criar o Administrador: " + ex.getMessage());
         }
-
+        screenView.getAdminList().setModel(model);
+        screenView.repaint();
     }
 }

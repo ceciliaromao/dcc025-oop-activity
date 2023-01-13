@@ -9,7 +9,6 @@ import com.google.gson.reflect.TypeToken;
 import com.mycompany.agendamentoconsultas.model.Admin;
 import com.mycompany.agendamentoconsultas.model.Doctor;
 import com.mycompany.agendamentoconsultas.model.Pacient;
-import com.mycompany.agendamentoconsultas.model.Person;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;

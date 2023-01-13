@@ -4,13 +4,13 @@
  */
 package com.mycompany.agendamentoconsultas.controller;
 
-import com.mycompany.agendamentoconsultas.model.UserLists;
+
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import com.mycompany.agendamentoconsultas.model.UserRegistrationException;
 import com.mycompany.agendamentoconsultas.view.PacientRegistrationScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -28,17 +28,19 @@ public class CreatePacient implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        List<Pacient> thePacientsList = UserLists.getPacients();
+        DefaultListModel<Pacient> model = (DefaultListModel<Pacient>) screenView.getPacientList().getModel();
 
         try {
-            thePacientsList.add(new Pacient(screenView.getJtCPF().getText(),
+            model.addElement(new Pacient(screenView.getJtCPF().getText(),
                     screenView.getJtName().getText(),
                     screenView.getJtPhoneNumber().getText(),
                     screenView.getJtEmail().getText(),
                     screenView.getJPasswordField().getPassword().toString()));
         } catch (UserRegistrationException ex) {
-            System.out.println("Algo deu errado ao criar o Paciente: " + ex.getMessage());
+            System.out.println("Algo deu errado ao criar o Paciente " + ex.getMessage());
         }
+        screenView.getPacientList().setModel(model);
+        screenView.repaint();
 
     }
 }

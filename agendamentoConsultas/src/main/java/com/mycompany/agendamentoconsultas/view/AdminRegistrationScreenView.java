@@ -103,7 +103,7 @@ public class AdminRegistrationScreenView extends JFrame{
     
     private void createMenu(){
         JPanel menuPanel = new JPanel();
-        menuPanel.setBorder(BorderFactory.createTitledBorder("Médicos:"));
+        menuPanel.setBorder(BorderFactory.createTitledBorder("Administradores:"));
         menuPanel.setPreferredSize(new Dimension(120, 200));
         
         DefaultListModel<Admin> model = new DefaultListModel<>();
@@ -169,10 +169,6 @@ public class AdminRegistrationScreenView extends JFrame{
         JButton btnUpdate = new JButton("Atualiza");
         btnUpdate.addActionListener(new EditAdmin(this));
         painelBotoes.add(btnUpdate);
-        
-        JButton btnBack = new JButton("Voltar");
-        //btnBack.addActionListener(???);
-        painelBotoes.add(btnBack);
         
         formPanel.add(painelBotoes, BorderLayout.SOUTH);
         

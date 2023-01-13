@@ -170,11 +170,7 @@ public class PacientRegistrationScreenView extends JFrame {
         JButton btnUpdate = new JButton("Atualiza");
         btnUpdate.addActionListener(new EditPacient(this));
         painelBotoes.add(btnUpdate);
-        
-        JButton btnBack = new JButton("Voltar");
-        //btnBack.addActionListener(???);
-        painelBotoes.add(btnBack);
-                
+
         formPanel.add(painelBotoes, BorderLayout.SOUTH);
         
         this.pacientPanel.add(formPanel, BorderLayout.CENTER);

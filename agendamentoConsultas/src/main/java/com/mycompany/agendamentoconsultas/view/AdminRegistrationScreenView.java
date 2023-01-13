@@ -109,12 +109,12 @@ public class AdminRegistrationScreenView extends JFrame{
         
         adminList = new JList<>(model);
         adminList.setVisible(true);
-         adminList.setPreferredSize(new Dimension(95, 300));
+        adminList.setPreferredSize(new Dimension(95, 300));
         adminList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
-         adminList.addListSelectionListener(new ListAdmins(this));
+        adminList.addListSelectionListener(new ListAdmins(this));
         
-        menuPanel.add(new JScrollPane(adminPanel), BorderLayout.EAST);
+        adminPanel.add(new JScrollPane(menuPanel), BorderLayout.EAST);
         
         this.adminPanel.add(menuPanel, BorderLayout.WEST);
     }

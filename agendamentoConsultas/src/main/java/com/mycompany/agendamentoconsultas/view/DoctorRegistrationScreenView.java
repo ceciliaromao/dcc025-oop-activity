@@ -123,7 +123,7 @@ public class DoctorRegistrationScreenView extends JFrame{
         
         DoctorList.addListSelectionListener(new ListDoctors(this));
         
-        menuPanel.add(new JScrollPane(DoctorPanel), BorderLayout.EAST);
+        DoctorPanel.add(new JScrollPane(menuPanel), BorderLayout.EAST);
         
         this.DoctorPanel.add(menuPanel, BorderLayout.WEST);
     }

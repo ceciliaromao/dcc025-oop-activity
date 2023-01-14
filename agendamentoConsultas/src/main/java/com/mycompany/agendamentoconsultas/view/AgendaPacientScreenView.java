@@ -12,7 +12,9 @@ import com.mycompany.agendamentoconsultas.controller.EditAgendaDoctor;
 import com.mycompany.agendamentoconsultas.controller.EditAgendaPacient;
 import com.mycompany.agendamentoconsultas.controller.ListAgendaDoctor;
 import com.mycompany.agendamentoconsultas.controller.ListAgendaPacient;
+import com.mycompany.agendamentoconsultas.controller.UpdateAgendaPacient;
 import com.mycompany.agendamentoconsultas.model.Agenda;
+import com.mycompany.agendamentoconsultas.model.Pacient;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -39,10 +41,13 @@ public class AgendaPacientScreenView extends JFrame{
     private JTextField jtPacientName;
     private JTextField jtDoctorName;
     private JTextField jtDoctorSpecialty;
+    private Pacient pacient;
     private int lastIndex;
     
-    public AgendaPacientScreenView(){
+    public AgendaPacientScreenView(Pacient pacient){
         super("Registro de Horários");
+        this.pacient = pacient;
+         this.addWindowListener(new UpdateAgendaPacient(this));
     }
 
     public JList<Agenda> getAgendaList() {
@@ -104,7 +109,7 @@ public class AgendaPacientScreenView extends JFrame{
         agendaList.setPreferredSize(new Dimension(95, 300));
         agendaList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
-        agendaList.addListSelectionListener(new ListAgendaPacient(this));
+        agendaList.addListSelectionListener(new ListAgendaPacient(this,this.pacient));
         
         menuPanel.add(new JScrollPane(agendaList), BorderLayout.EAST);
         

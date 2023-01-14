@@ -66,4 +66,9 @@ public class Agenda {
     public void setActive(boolean active) {
         this.active = active;
     }
+    
+    @Override
+    public String toString() {
+        return this.getDatetime().toString();
+    }
 }

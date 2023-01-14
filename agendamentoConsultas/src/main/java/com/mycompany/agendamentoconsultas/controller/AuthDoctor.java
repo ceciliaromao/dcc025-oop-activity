@@ -6,6 +6,7 @@ package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.view.DoctorLoginScreenView;
 import com.mycompany.agendamentoconsultas.model.UserLists;
+import com.mycompany.agendamentoconsultas.view.AgendaDoctorScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -28,10 +29,11 @@ public class AuthDoctor implements ActionListener {
         
         for(int i=0; i<UserLists.getDoctors().size(); i++){
             if(UserLists.getDoctors().get(i).getCrm().equals(login.getJtCRM().getText()) 
-                && UserLists.getDoctors().get(i).getPassword().equals(login.getJpPassword().toString())){
+                && UserLists.getDoctors().get(i).getPassword().equals(login.getJpPassword().getText())){
                 login.getWindowFrame().setVisible(false);
                 
-                //Open agenda médico
+                AgendaDoctorScreenView screenView = new AgendaDoctorScreenView(UserLists.getDoctors().get(i));
+                screenView.display();
                 return;
             }
         }

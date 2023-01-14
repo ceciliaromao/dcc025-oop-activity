@@ -8,7 +8,9 @@ import com.mycompany.agendamentoconsultas.controller.CreateAgendaDoctor;
 import com.mycompany.agendamentoconsultas.controller.DeleteAgendaDoctor;
 import com.mycompany.agendamentoconsultas.controller.EditAgendaDoctor;
 import com.mycompany.agendamentoconsultas.controller.ListAgendaDoctor;
+import com.mycompany.agendamentoconsultas.controller.UpdateAgendaDoctor;
 import com.mycompany.agendamentoconsultas.model.Agenda;
+import com.mycompany.agendamentoconsultas.model.Doctor;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -36,10 +38,13 @@ public class AgendaDoctorScreenView extends JFrame{
     private JTextField jtPacientName;
     private JTextField jtDoctorName;
     private JTextField jtDoctorSpecialty;
+    private Doctor doctor;
     private int lastIndex;
     
-    public AgendaDoctorScreenView(){
+    public AgendaDoctorScreenView(Doctor doctor){
         super("Registro de Horários");
+        this.doctor = doctor;    
+        this.addWindowListener(new UpdateAgendaDoctor(this));
     }
 
     public JList<Agenda> getAgendaList() {
@@ -91,7 +96,7 @@ public class AgendaDoctorScreenView extends JFrame{
     
     private void createMenu(){
         JPanel menuPanel = new JPanel();
-        menuPanel.setBorder(BorderFactory.createTitledBorder("Pacientes:"));
+        menuPanel.setBorder(BorderFactory.createTitledBorder("Horários:"));
         menuPanel.setPreferredSize(new Dimension(120, 200));
         
         DefaultListModel<Agenda> model = new DefaultListModel<>();
@@ -116,24 +121,28 @@ public class AgendaDoctorScreenView extends JFrame{
         JPanel panelLabel = new JPanel(new GridLayout(0, 1));
         JPanel panelTextField = new JPanel(new GridLayout(0, 1));
         
-        JLabel jlDate = new JLabel("Email: ");
+        JLabel jlDate = new JLabel("Data: ");
         jtDatetime = new JDateField();
         panelLabel.add(jlDate);
         panelTextField.add(jtDatetime);
         
-        JLabel jlDocName = new JLabel("Nome do Médico: ");
-        jtDoctorName = new JTextField(20);
-        panelLabel.add(jlDocName);
-        panelTextField.add(jtDoctorName);
-        
-        JLabel jlPacName = new JLabel("Telefone: ");
+        JLabel jlPacName = new JLabel("Nome do Paciente: ");
         jtPacientName = new JTextField(20);
         panelLabel.add(jlPacName);
         panelTextField.add(jtPacientName);
+        
+        JLabel jlDocName = new JLabel("Nome do Médico: ");
+        jtDoctorName = new JTextField(20);
+        panelLabel.add(jlDocName);
+        jtDoctorName.setText(this.doctor.getName());
+        jtDoctorName.setEditable(false);
+        panelTextField.add(jtDoctorName);
        
-        JLabel jlSpecialty = new JLabel("CPF: ");
+        JLabel jlSpecialty = new JLabel("Especialização: ");
         jtDoctorSpecialty = new JTextField(20);
         panelLabel.add(jlSpecialty);
+        jtDoctorSpecialty.setText(this.doctor.getSpecialty());
+        jtDoctorSpecialty.setEditable(false);
         panelTextField.add(jtDoctorSpecialty);
         
         

@@ -44,7 +44,7 @@ public class AdminMainScreenView extends JFrame{
     private void createMenu(){
         
         JPanel jpButtons = new JPanel();
-        jpButtons.setBorder(BorderFactory.createTitledBorder("Paciente: " + admin.getName()));
+        jpButtons.setBorder(BorderFactory.createTitledBorder("Administrador: " + admin.getName()));
         jpButtons.setLayout(new FlowLayout());
         jpButtons.setPreferredSize(new Dimension(300, 180));
         

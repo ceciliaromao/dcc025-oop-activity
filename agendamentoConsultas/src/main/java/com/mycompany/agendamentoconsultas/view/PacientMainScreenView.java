@@ -52,7 +52,7 @@ public class PacientMainScreenView extends JFrame{
         jpButtons.add(btnUpdateAgenda);  
         
         JButton btnReadAgenda = new JButton("Verificar consultas agendadas");
-        //btnReadAgenda.addActionListener(new PacientAgendaScreenView(this));     >>>> TODO
+        //btnReadAgenda.addActionListener(new PacientAgendaScreenView(this.pacient));     >>>> TODO
         jpButtons.add(btnReadAgenda);
         
         this.screenPanel.add(jpButtons, BorderLayout.WEST);

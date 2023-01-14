@@ -5,6 +5,7 @@
 package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.model.Agenda;
+import com.mycompany.agendamentoconsultas.model.Pacient;
 import com.mycompany.agendamentoconsultas.view.AgendaPacientScreenView;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -16,9 +17,11 @@ import javax.swing.event.ListSelectionListener;
 public class ListAgendaPacient implements ListSelectionListener {
 
     private AgendaPacientScreenView screenView;
+    private Pacient pacient;
 
-    public ListAgendaPacient (AgendaPacientScreenView screenView) {
+    public ListAgendaPacient (AgendaPacientScreenView screenView,Pacient pacient) {
         this.screenView = screenView;
+        this.pacient = pacient;
     }
 
     @Override
@@ -28,13 +31,15 @@ public class ListAgendaPacient implements ListSelectionListener {
         if(index != -1){
             Agenda aAgenda = screenView.getAgendaList().getModel().getElementAt(index);
             
+            if(aAgenda.getPacientName().equals(pacient.getName())){
+                
             screenView.getJtDate().setDate(aAgenda.getDatetime());
             screenView.getJtDoctorName().setText(aAgenda.getDoctorName());
             screenView.getJtPacientName().setText(aAgenda.getPacientName());
             screenView.getJtDoctorSpecialty().setText(aAgenda.getDoctorSpecialty());
             
             screenView.setLastIndex(index);
-            
+            }
         }
     }
 }

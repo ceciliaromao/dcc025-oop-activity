@@ -8,6 +8,7 @@ import com.mycompany.agendamentoconsultas.model.Pacient;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -48,14 +49,30 @@ public class PacientMainScreenView extends JFrame{
         jpButtons.setPreferredSize(new Dimension(300, 180));
         
         JButton btnUpdateAgenda = new JButton("Agendar consulta");
-        //btnUpdateAgenda.addActionListener(new FreeAgendaScreenView(this));    >>>> TODO
+        btnUpdateAgenda.addActionListener((ActionEvent e) -> {
+            goToEmptyAgenda();
+        });
         jpButtons.add(btnUpdateAgenda);  
         
         JButton btnReadAgenda = new JButton("Verificar consultas agendadas");
-        //btnReadAgenda.addActionListener(new PacientAgendaScreenView(this.pacient));     >>>> TODO
+        btnReadAgenda.addActionListener((ActionEvent e) -> {
+            goToMyAgenda();
+        });
         jpButtons.add(btnReadAgenda);
         
         this.screenPanel.add(jpButtons, BorderLayout.WEST);
+    }
+    
+    private void goToEmptyAgenda(){
+        this.setVisible(false);
+        AgendaNoPacientScreenView newView = new AgendaNoPacientScreenView(this.pacient);
+        newView.display();
+    }
+    
+    private void goToMyAgenda(){
+        this.setVisible(false);
+        AgendaPacientScreenView newView = new AgendaPacientScreenView(this.pacient);
+        newView.display();
     }
     
     public void buildScreen(){

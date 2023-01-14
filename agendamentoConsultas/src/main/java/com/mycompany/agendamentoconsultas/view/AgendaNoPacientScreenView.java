@@ -4,8 +4,9 @@
  */
 package com.mycompany.agendamentoconsultas.view;
 
-import com.mycompany.agendamentoconsultas.controller.ListAgendaPacient;
-import com.mycompany.agendamentoconsultas.controller.UpdateAgendaPacient;
+import com.mycompany.agendamentoconsultas.controller.EditAgendaPacient;
+import com.mycompany.agendamentoconsultas.controller.ListAgendaNoPacient;
+import com.mycompany.agendamentoconsultas.controller.UpdateAgendaNoPacient;
 import com.mycompany.agendamentoconsultas.model.Agenda;
 import com.mycompany.agendamentoconsultas.model.Pacient;
 import java.awt.BorderLayout;
@@ -13,7 +14,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
-
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -27,7 +28,7 @@ import org.apache.jmeter.gui.util.JDateField;
  *
  * @author Fernando
  */
-public class AgendaPacientScreenView extends JFrame{
+public class AgendaNoPacientScreenView extends JFrame{
      private JPanel agendaPanel;
     private JList<Agenda> agendaList;
     private JDateField jtDatetime;
@@ -37,10 +38,10 @@ public class AgendaPacientScreenView extends JFrame{
     private Pacient pacient;
     private int lastIndex;
     
-    public AgendaPacientScreenView(Pacient pacient){
+    public AgendaNoPacientScreenView(Pacient pacient){
         super("Registro de Horários");
         this.pacient = pacient;
-         this.addWindowListener(new UpdateAgendaPacient(this));
+         this.addWindowListener(new UpdateAgendaNoPacient(this));
     }
 
     public JList<Agenda> getAgendaList() {
@@ -102,7 +103,7 @@ public class AgendaPacientScreenView extends JFrame{
         agendaList.setPreferredSize(new Dimension(95, 300));
         agendaList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
-        agendaList.addListSelectionListener(new ListAgendaPacient(this,this.pacient));
+        agendaList.addListSelectionListener(new ListAgendaNoPacient(this,this.pacient));
         
         menuPanel.add(new JScrollPane(agendaList), BorderLayout.EAST);
         
@@ -144,6 +145,14 @@ public class AgendaPacientScreenView extends JFrame{
         formPanel.add(panelLabel, BorderLayout.WEST);
         formPanel.add(panelTextField, BorderLayout.EAST);
        
+        JPanel painelBotoes = new JPanel();
+        
+        JButton btnUpdate = new JButton("Agendar Consulta");
+        btnUpdate.addActionListener(new EditAgendaPacient(this, this.pacient));
+        painelBotoes.add(btnUpdate);
+        
+        formPanel.add(painelBotoes, BorderLayout.SOUTH);
+        
         this.agendaPanel.add(formPanel, BorderLayout.CENTER);
     }
     

@@ -5,7 +5,8 @@
 package com.mycompany.agendamentoconsultas.controller;
 
 import com.mycompany.agendamentoconsultas.model.Agenda;
-import com.mycompany.agendamentoconsultas.view.AgendaPacientScreenView;
+import com.mycompany.agendamentoconsultas.model.Pacient;
+import com.mycompany.agendamentoconsultas.view.AgendaNoPacientScreenView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.DateTimeException;
@@ -17,10 +18,12 @@ import javax.swing.JOptionPane;
  * @author Fernando
  */
 public class EditAgendaPacient implements ActionListener {
-    private AgendaPacientScreenView screenView;
+    private AgendaNoPacientScreenView screenView;
+    private Pacient pacient;
     
-    public EditAgendaPacient(AgendaPacientScreenView screenView){
+    public EditAgendaPacient(AgendaNoPacientScreenView screenView,Pacient pacient){
         this.screenView = screenView;
+        this.pacient = pacient;
     }
 
     @Override
@@ -31,11 +34,11 @@ public class EditAgendaPacient implements ActionListener {
          try {
             agendaOnEdit.setDatetime(screenView.getJtDate().getDate());
             agendaOnEdit.setDoctorName(screenView.getJtDoctorName().getText());
-            agendaOnEdit.setPacientName(screenView.getJtPacientName().getText());
+            agendaOnEdit.setPacientName(this.pacient.getName());
             agendaOnEdit.setDoctorSpecialty(screenView.getJtDoctorSpecialty().getText());
 
             
-            JOptionPane.showMessageDialog(screenView, "Sucesso ao atualizar Agenda!");
+            JOptionPane.showMessageDialog(screenView, "Sucesso ao agendar consulta!");
         } catch (DateTimeException ex) {
             JOptionPane.showMessageDialog(screenView, ex.getMessage(), ex.getMessage(), JOptionPane.ERROR_MESSAGE);
         }
